@@ -5,6 +5,7 @@ const rgb = (r: number, g: number, b: number): Color => new Color(r, g, b);
 
 export const PRIMARY_COLOR = rgb(98, 26, 253);
 export const BLUE_COLOR = rgb(26, 141, 249);
+export const RED_COLOR = rgb(230, 44, 62);
 export const WHITE_COLOR = rgb(255, 255, 255);
 export const WHITE_BG_COLOR = rgb(255, 255, 255);
 export const LIGHT_GRAY_BG_COLOR = rgb(242, 242, 242);

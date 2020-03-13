@@ -51,8 +51,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>) =>
 
 interface Props
   extends ReturnType<typeof mapStateToProps>,
-    ReturnType<typeof mapDispatchToProps>,
-    NavigationScreenProps {}
+    ReturnType<typeof mapDispatchToProps> {}
 
 const AuthScreen = ({
   authDisabled,

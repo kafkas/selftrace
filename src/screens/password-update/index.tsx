@@ -1,27 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { ReactElement, useState, useEffect } from 'react';
 import { ScrollView } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import AuthUtils from '../../util/AuthUtils';
 import SubmitButton from '../../components/Button/Submit';
 import FormContainer from '../../components/FormContainer';
-import EmailInput from '../../components/TextInput/Email';
+import PasswordInput from '../../components/TextInput/Password';
 import { ProgressStatus } from '../../data-types';
-import * as Actions from '../../actions/auth/resetPassword';
-import { Action, Dispatch } from '../../actions';
+import AuthUtils from '../../util/AuthUtils';
 import { ReduxRoot } from '../../reducers';
+import * as Actions from '../../actions/auth/updatePassword';
+import { Action, Dispatch } from '../../actions';
 import styles from './styles';
 
 const mapStateToProps = (state: ReduxRoot) => ({
-  progress: state.auth.resetPassword.progress,
+  progress: state.auth.updatePassword.progress,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>) =>
   bindActionCreators(
     {
-      resetUserPassword: Actions.resetUserPassword,
+      updateUserPassword: Actions.updateUserPassword,
       clearProgress: () => (d: Dispatch) =>
-        d(Actions.clearResetPasswordProgress()),
+        d(Actions.clearUpdatePasswordProgress()),
     },
     dispatch
   );
@@ -32,13 +32,15 @@ interface Props
 
 const PasswordResetScreen = ({
   progress,
-  resetUserPassword,
+  updateUserPassword,
   clearProgress,
-}: Props) => {
-  const [email, setEmail] = useState('');
+}: Props): ReactElement => {
+  const [password1, setPassword1] = useState('');
+  const [password2, setPassword2] = useState('');
 
   const disabled =
-    !AuthUtils.isValidEmail(email) ||
+    password1 !== password2 ||
+    !AuthUtils.isValidPassword(password1) ||
     progress.status === ProgressStatus.REQUEST ||
     progress.status === ProgressStatus.SUCCESS;
 
@@ -55,19 +57,29 @@ const PasswordResetScreen = ({
       contentContainerStyle={styles.contentContainer}
     >
       <FormContainer progress={progress}>
-        <EmailInput
-          value={email}
+        <PasswordInput
+          value={password1}
           onChangeText={text => {
             if (progress.status) clearProgress();
-            setEmail(text.toLowerCase());
+            setPassword1(text);
           }}
-          style={styles.input}
+          label='Password'
+          placeholder='Your new password'
+        />
+        <PasswordInput
+          value={password2}
+          onChangeText={text => {
+            if (progress.status) clearProgress();
+            setPassword2(text);
+          }}
+          label='Password'
+          placeholder='Confirm new password'
         />
       </FormContainer>
       <SubmitButton
-        label='Reset'
+        label='Update'
         onPress={() => {
-          resetUserPassword(email);
+          updateUserPassword(password1);
         }}
         disabled={disabled}
         loading={progress.status === ProgressStatus.REQUEST}

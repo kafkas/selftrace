@@ -2,26 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { ScrollView } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import AuthUtils from '../../util/AuthUtils';
 import SubmitButton from '../../components/Button/Submit';
 import FormContainer from '../../components/FormContainer';
 import EmailInput from '../../components/TextInput/Email';
 import { ProgressStatus } from '../../data-types';
-import * as Actions from '../../actions/auth/resetPassword';
+import * as Actions from '../../actions/auth/userInfo';
+import AuthUtils from '../../util/AuthUtils';
 import { Action, Dispatch } from '../../actions';
 import { ReduxRoot } from '../../reducers';
 import styles from './styles';
 
 const mapStateToProps = (state: ReduxRoot) => ({
-  progress: state.auth.resetPassword.progress,
+  currentEmail: state.auth.userInfo.email,
+  progress: state.auth.userInfo.progress,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>) =>
   bindActionCreators(
     {
-      resetUserPassword: Actions.resetUserPassword,
+      uploadUserInfo: Actions.uploadUserInfo,
       clearProgress: () => (d: Dispatch) =>
-        d(Actions.clearResetPasswordProgress()),
+        d(Actions.clearUpdateUserInfoProgress()),
     },
     dispatch
   );
@@ -30,17 +31,15 @@ interface Props
   extends ReturnType<typeof mapStateToProps>,
     ReturnType<typeof mapDispatchToProps> {}
 
-const PasswordResetScreen = ({
+const ProfileScreen = ({
+  currentEmail,
   progress,
-  resetUserPassword,
+  uploadUserInfo,
   clearProgress,
 }: Props) => {
-  const [email, setEmail] = useState('');
-
-  const disabled =
-    !AuthUtils.isValidEmail(email) ||
-    progress.status === ProgressStatus.REQUEST ||
-    progress.status === ProgressStatus.SUCCESS;
+  const [email, setEmail] = useState(currentEmail);
+  const submitDisabled =
+    !AuthUtils.isValidEmail(email) || email === currentEmail;
 
   useEffect(
     () => () => {
@@ -58,25 +57,21 @@ const PasswordResetScreen = ({
         <EmailInput
           value={email}
           onChangeText={text => {
-            if (progress.status) clearProgress();
+            if (progress.status !== ProgressStatus.NIL) clearProgress();
             setEmail(text.toLowerCase());
           }}
-          style={styles.input}
         />
       </FormContainer>
       <SubmitButton
-        label='Reset'
+        label='Update'
         onPress={() => {
-          resetUserPassword(email);
+          uploadUserInfo(email);
         }}
-        disabled={disabled}
-        loading={progress.status === ProgressStatus.REQUEST}
+        disabled={submitDisabled}
+        loading={false}
       />
     </ScrollView>
   );
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(PasswordResetScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);
