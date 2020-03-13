@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import AuthScreen from '../screens/auth';
 import InfoScreen from '../screens/info';
 import MapScreen from '../screens/map';
+import PasswordResetScreen from '../screens/password-reset';
 import SplashScreen from '../screens/splash';
 import { AuthStatus } from '../data-types';
 
@@ -23,13 +24,21 @@ export default function Layout({ authStatus }: Props) {
   return (
     <NavigationContainer>
       {authStatus === AuthStatus.SignedIn ? (
-        <BottomTab.Navigator>
-          <BottomTab.Screen name='Map' component={MapScreen} />
-          <BottomTab.Screen name='Info' component={InfoScreen} />
+        <BottomTab.Navigator initialRouteName='MapScreen'>
+          <BottomTab.Screen name='MapScreen' component={MapScreen} />
+          <BottomTab.Screen name='InfoScreen' component={InfoScreen} />
         </BottomTab.Navigator>
       ) : (
-        <AuthStack.Navigator>
-          <AuthStack.Screen name='Auth' component={AuthScreen} />
+        <AuthStack.Navigator initialRouteName='AuthScreen'>
+          <AuthStack.Screen
+            name='AuthScreen'
+            component={AuthScreen}
+            options={{ headerShown: false }}
+          />
+          <AuthStack.Screen
+            name='PasswordResetScreen'
+            component={PasswordResetScreen}
+          />
         </AuthStack.Navigator>
       )}
     </NavigationContainer>

@@ -61,7 +61,7 @@ module.exports = {
     'import/prefer-default-export': 0,
     'import/no-mutable-exports': 0,
     'import/no-cycle': 0,
-    'import/no-unresolved': [2, { commonjs: true, amd: true }],
+    // 'import/no-unresolved': [2, { commonjs: true, amd: true }],
     indent: 'off',
     'jest/expect-expect': [1, { assertFunctionNames: ['expect*'] }],
     'lines-between-class-members': 0,
