@@ -1,6 +1,6 @@
 export enum Wellbeing {
   NotTested = 1, // default
-  ShowingSymptoms = 2,
-  TestedNegative = 3,
+  TestedNegative = 2,
+  ShowingSymptoms = 3,
   TestedPositive = 4,
 }

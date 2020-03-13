@@ -2,7 +2,7 @@ import React from 'react';
 import { registerRootComponent } from 'expo';
 import App from './App';
 
-function Root(): JSX.Element {
+function Root() {
   return <App />;
 }
 

@@ -81,13 +81,14 @@ module.exports = {
       'error',
       { functions: false, classes: true, variables: false },
     ],
+    'react/destructuring-assignment': 0,
     'react/jsx-filename-extension': 0,
-    'react/jsx-wrap-multilines': 0,
-    'react/no-did-update-set-state': 0,
     'react/jsx-indent': 0,
     'react/jsx-indent-props': 0,
-    'react/destructuring-assignment': 0,
     'react/jsx-one-expression-per-line': 0,
+    'react/jsx-props-no-spreading': 0,
+    'react/jsx-wrap-multilines': 0,
+    'react/no-did-update-set-state': 0,
     'react/prefer-stateless-function': 0,
     'react/sort-comp': 0,
     'react-hooks/rules-of-hooks': 'error',
@@ -100,4 +101,12 @@ module.exports = {
       },
     },
   },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': [2, { args: 'none' }],
+      },
+    },
+  ],
 };
