@@ -8,7 +8,7 @@ import {
 import { MAIN_FONT_FAMILY } from '../../styles/typography';
 import { BLACK_TEXT_COLOR } from '../../styles/colors';
 
-interface TextProps extends RNTextProps {
+export interface TextProps extends RNTextProps {
   children: ReactNode;
   animated?: boolean;
   style?: TextStyle;

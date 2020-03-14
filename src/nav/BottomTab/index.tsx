@@ -2,8 +2,8 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from '../../components/Icon';
 import MapScreen from '../../screens/map';
-import FormScreen from '../../screens/form';
 import AccountStack from './AccountStack';
+import FormStack from './FormStack';
 // import AnimatedTouchable from './AnimatedTouchable';
 
 const BTab = createBottomTabNavigator();
@@ -11,13 +11,13 @@ const BTab = createBottomTabNavigator();
 export default function BottomTab() {
   return (
     <BTab.Navigator
-      initialRouteName='FormScreen'
+      initialRouteName='FormStack'
       tabBarOptions={{ showLabel: false }}
       screenOptions={{ title: 'ass' }}
     >
       <BTab.Screen
-        name='FormScreen'
-        component={FormScreen}
+        name='FormStack'
+        component={FormStack}
         options={{
           tabBarIcon: ({ color }: { color: string }) => (
             <Icon name='form' size={25} color={color} />
