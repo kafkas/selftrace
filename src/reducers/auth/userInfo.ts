@@ -12,6 +12,12 @@ export interface ReduxAuthUserInfo {
   progress: Progress;
 }
 
+const INITIAL_STATE: Readonly<ReduxAuthUserInfo> = {
+  uid: null,
+  email: null,
+  progress: ProgressStatus.NIL,
+};
+
 export const userInfo = (
   state: ReduxAuthUserInfo,
   action: Action
@@ -21,7 +27,7 @@ export const userInfo = (
       const updatedUserInfo =
         (action as NetworkAction).progress.status === ProgressStatus.SUCCESS
           ? action.payload
-          : {};
+          : INITIAL_STATE;
       return {
         ...state,
         ...updatedUserInfo,
@@ -31,7 +37,7 @@ export const userInfo = (
     case ActionType.SET_AUTH_STATUS: {
       switch ((action as AuthStatusAction).payload.status) {
         case AuthStatus.SignedOut:
-          return {};
+          return INITIAL_STATE;
         case AuthStatus.SignedIn:
           return { ...state, ...(action as AuthStatusAction).payload.userInfo };
         default:
@@ -42,7 +48,7 @@ export const userInfo = (
     case ActionType.REQUEST_SIGNOUT: {
       switch ((action as NetworkAction).progress.status) {
         case ProgressStatus.SUCCESS:
-          return {};
+          return INITIAL_STATE;
         default:
           return state;
       }
