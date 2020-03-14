@@ -35,7 +35,7 @@ const WELLBEING_OPTION_MAP: WellbeingOptionMap = {
     description:
       'I have not been tested and I am feeling unwell. I think I am showing some of the coronavirus (COVID-19) symptoms.',
     note:
-      'It may prove helpful to choose this option if your symptoms are mild.',
+      'It may prove helpful to choose this option even if your symptoms are mild.',
   },
   [Wellbeing.TestedNegative]: {
     label: 'Tested Negative',

@@ -22,13 +22,12 @@ export default StyleSheet.create({
   descriptionText: {},
   noteSection: {
     marginTop: MIN_MARGIN_Y,
-    // backgroundColor: 'lightblue',
   },
   noteTitle: {
-    fontSize: 11,
-    fontWeight: '700',
+    fontSize: 12,
+    fontWeight: '800',
   },
   noteText: {
-    fontSize: 11,
+    fontSize: 12,
   },
 });

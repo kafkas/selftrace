@@ -54,7 +54,6 @@ export const uploadUserInfo = (
 
     return dispatch(receiveUpdateUserInfoResponse(updatedInfo));
   } catch (err) {
-    console.log('OOPS');
     return dispatch(receiveUpdateUserInfoError(err));
   }
 };
