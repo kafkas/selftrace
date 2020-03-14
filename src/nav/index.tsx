@@ -6,6 +6,7 @@ import AuthScreen from '../screens/auth';
 import PasswordResetScreen from '../screens/password-reset';
 import SplashScreen from '../screens/splash';
 import { AuthStatus } from '../data-types';
+import { Theme, StackScreenOptions } from './config';
 
 const Stack = createStackNavigator();
 
@@ -21,28 +22,34 @@ export default function Layout({ authStatus }: Props) {
   const isSignedOut = authStatus === AuthStatus.SignedOut;
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
+    <NavigationContainer theme={Theme}>
+      <Stack.Navigator screenOptions={StackScreenOptions}>
         {isSignedOut ? (
           <>
             <Stack.Screen
               name='AuthScreen'
               component={AuthScreen}
               options={{
+                ...StackScreenOptions,
                 headerShown: false,
+                headerTitle: 'Sign in',
                 animationTypeForReplace: isSignedOut ? 'pop' : 'push',
               }}
             />
             <Stack.Screen
               name='PasswordResetScreen'
               component={PasswordResetScreen}
+              options={{
+                ...StackScreenOptions,
+                headerTitle: 'Reset password',
+              }}
             />
           </>
         ) : (
           <Stack.Screen
             name='BottomTab'
             component={BottomTab}
-            options={{ headerShown: false }}
+            options={{ ...StackScreenOptions, headerShown: false }}
           />
         )}
       </Stack.Navigator>

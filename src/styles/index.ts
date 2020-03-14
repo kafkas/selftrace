@@ -22,6 +22,7 @@ export const PADDING_Y = 15;
 
 // Main Element Styles
 export const STATUS_BAR_HEIGHT = Constants.statusBarHeight;
-export const HEADER_HEIGHT = 60;
+export const RAW_HEADER_HEIGHT = 50;
+export const HEADER_HEIGHT = STATUS_BAR_HEIGHT + RAW_HEADER_HEIGHT;
 export const BOTTOM_TAB_HEIGHT = 50;
 export const FORM_INPUT_HEIGHT = 80;
