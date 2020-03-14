@@ -150,6 +150,16 @@ const hashmap = Object.freeze({
     id: 'location-pin',
     defaultSize: 25,
   },
+  earth: {
+    font: MaterialCommunityIcons,
+    id: 'earth',
+    defaultSize: 25,
+  },
+  form: {
+    font: AntDesign,
+    id: 'form',
+    defaultSize: 25,
+  },
 });
 
 export type IconName = keyof typeof hashmap;
