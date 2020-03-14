@@ -92,14 +92,13 @@ const AuthScreen = ({
     Keyboard.dismiss();
   }, [activeIndex]);
 
-  // Combined progress
   const combinedProgress = signinProgress.status
     ? signinProgress
     : signupProgress;
 
   function clearProgress() {
-    if (signupProgress.status !== ProgressStatus.NIL) clearSignupProgress();
-    if (signinProgress.status !== ProgressStatus.NIL) clearSigninProgress();
+    if (signupProgress.status) clearSignupProgress();
+    if (signinProgress.status) clearSigninProgress();
   }
 
   useEffect(

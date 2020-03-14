@@ -27,7 +27,8 @@ export const userInfo = (
       const updatedUserInfo =
         (action as NetworkAction).progress.status === ProgressStatus.SUCCESS
           ? action.payload
-          : INITIAL_STATE;
+          : {};
+
       return {
         ...state,
         ...updatedUserInfo,

@@ -58,7 +58,7 @@ const PasswordResetScreen = ({
         <EmailInput
           value={email}
           onChangeText={text => {
-            if (progress.status) clearProgress();
+            if (progress.status !== ProgressStatus.NIL) clearProgress();
             setEmail(text.toLowerCase());
           }}
           style={styles.input}

@@ -1,5 +1,5 @@
 import { StyleSheet, Platform } from 'react-native';
-import { W_WIDTH, W_MARGIN, W_HEIGHT, MAX_MARGIN_Y } from '../../styles';
+import { W_WIDTH, W_HEIGHT, W_MARGIN, MAX_MARGIN_Y } from '../../styles';
 
 // Image
 export const IMAGE_SIZE = 160;
@@ -13,6 +13,7 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
+    backgroundColor: 'white',
   },
   logoAnimationContainer: {
     zIndex: 1,

@@ -60,7 +60,7 @@ const PasswordResetScreen = ({
         <PasswordInput
           value={password1}
           onChangeText={text => {
-            if (progress.status) clearProgress();
+            if (progress.status !== ProgressStatus.NIL) clearProgress();
             setPassword1(text);
           }}
           label='Password'
@@ -69,7 +69,7 @@ const PasswordResetScreen = ({
         <PasswordInput
           value={password2}
           onChangeText={text => {
-            if (progress.status) clearProgress();
+            if (progress.status !== ProgressStatus.NIL) clearProgress();
             setPassword2(text);
           }}
           label='Password'

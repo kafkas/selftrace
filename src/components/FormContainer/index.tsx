@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { View, StyleSheet, Animated, ViewStyle } from 'react-native';
 import Text from '../Text';
-import { Progress } from '../../data-types';
+import { Progress, ProgressStatus } from '../../data-types';
 import { SECTION_APPEAR_DURATION } from '../../styles/animations';
 import {
   INACTIVE_TEXT_COLOR,
@@ -95,7 +95,7 @@ function FormContainer({
 function getScaleValue(p: Progress, errorsOnly: boolean): 0 | 1 {
   let val = p.status ? 1 : 0;
   if (errorsOnly) {
-    if (p.status === 'ERROR') val = 1;
+    if (p.status === ProgressStatus.ERROR) val = 1;
     else val = 0;
   }
 
