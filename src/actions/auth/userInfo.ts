@@ -1,4 +1,5 @@
 import * as API from '../../api';
+import * as Database from '../../database';
 import store from '../../store';
 import { ReduxAuthUserInfo } from '../../reducers/auth/userInfo';
 import { ActionCreator, NetworkAction, Dispatch, ActionType } from '..';
@@ -43,6 +44,8 @@ export const clearUpdateUserInfoProgress: ActionCreator<NetworkAction> = () => (
   },
 });
 
+const GRACEFUL_EXIT_DURATION = 750;
+
 export const uploadUserInfo = (
   updatedInfo: Partial<API.FirestoreUserDoc>
 ) => async (dispatch: Dispatch) => {
@@ -51,32 +54,31 @@ export const uploadUserInfo = (
 
   try {
     await API.requestUpdateUserInfo(uid, updatedInfo);
-
-    return dispatch(receiveUpdateUserInfoResponse(updatedInfo));
+    dispatch(receiveUpdateUserInfoResponse(updatedInfo));
+    setTimeout(() => {
+      dispatch(clearUpdateUserInfoProgress());
+    }, GRACEFUL_EXIT_DURATION);
   } catch (err) {
-    return dispatch(receiveUpdateUserInfoError(err));
+    dispatch(receiveUpdateUserInfoError(err));
   }
 };
 
 /*
  * Helper functions
  */
-export async function downloadUserInfo(uid: string, dispatch: Dispatch) {
-  dispatch(startUpdateUserInfoRequest());
+export async function downloadUserInfoToLocalDB(uid: string) {
   try {
     const userDoc = await API.requestUserInfo(uid);
+
     if (!userDoc) {
       // The user has just signed up. The server is creating the user document in Firestore.
       return undefined;
     }
+    const { wellbeing } = userDoc;
+    await Database.abstract.setWellbeing(wellbeing);
 
-    const { email } = userDoc;
-    const userInfo: ReduxAuthUserInfo = { email };
-    dispatch(receiveUpdateUserInfoResponse(userInfo));
-    dispatch(clearUpdateUserInfoProgress());
     return Promise.resolve();
   } catch (err) {
-    dispatch(receiveUpdateUserInfoError(err));
     return Promise.reject(err);
   }
 }

@@ -25,7 +25,7 @@ export default StyleSheet.create({
   },
   noteTitle: {
     fontSize: 12,
-    fontWeight: '800',
+    fontWeight: '700',
   },
   noteText: {
     fontSize: 12,

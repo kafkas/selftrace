@@ -4,6 +4,7 @@ import { ActionCreator, AuthStatusAction, Dispatch, ActionType } from '..';
 import { ReduxAuthUserInfo } from '../../reducers/auth/userInfo';
 import { AuthStatus } from '../../data-types';
 import { pullRefreshFromLocalDB } from '../helpers';
+import { downloadUserInfoToLocalDB } from './userInfo';
 
 const setAuthStatusToSignedIn: ActionCreator<AuthStatusAction> = (
   userInfo: ReduxAuthUserInfo
@@ -34,6 +35,8 @@ export const subscribeToAuthStateChange = () => (dispatch: Dispatch) => {
       uid: user.uid,
     };
 
+    // Download to DB
+    await downloadUserInfoToLocalDB(user.uid, dispatch);
     await pullRefreshFromLocalDB(dispatch);
 
     return dispatch(setAuthStatusToSignedIn(userInfo));

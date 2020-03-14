@@ -6,7 +6,7 @@ import SubmitButton from '../../components/Button/Submit';
 import FormContainer from '../../components/FormContainer';
 import Picker from '../../components/Picker';
 import Text from '../../components/Text';
-import { Wellbeing } from '../../data-types';
+import { Wellbeing, ProgressStatus } from '../../data-types';
 import * as Actions from '../../actions/auth/userInfo';
 import { Dispatch, Action } from '../../actions';
 import { ReduxRoot } from '../../reducers';
@@ -85,7 +85,7 @@ function FormScreen({
 
   const wellbeingObj: WellbeingObject | undefined =
     WELLBEING_OPTION_MAP[wellbeing];
-  const submitDisabled = !wellbeing;
+  const submitDisabled = !wellbeing || currentWellbeing === wellbeing;
 
   useEffect(
     () => () => {
@@ -120,9 +120,15 @@ function FormScreen({
               {wellbeingObj.description}
             </Text>
             {!!wellbeingObj.note && (
+              // <View style={styles.noteSection}>
+              //   <Text style={styles.noteTitle}>Note: </Text>
+              //   <Text style={styles.noteText}>{wellbeingObj.note}</Text>
+              // </View>
               <View style={styles.noteSection}>
-                <Text style={styles.noteTitle}>Note: </Text>
-                <Text style={styles.noteText}>{wellbeingObj.note}</Text>
+                <Text>
+                  <Text style={styles.noteTitle}>Note: </Text>
+                  <Text style={styles.noteText}>{wellbeingObj.note}</Text>
+                </Text>
               </View>
             )}
           </View>
@@ -134,7 +140,7 @@ function FormScreen({
           uploadUserInfo({ wellbeing: wellbeing!.valueOf() });
         }}
         disabled={submitDisabled}
-        loading={false}
+        loading={progress.status === ProgressStatus.REQUEST}
       />
     </ScrollView>
   );
