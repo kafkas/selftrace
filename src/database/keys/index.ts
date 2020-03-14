@@ -3,7 +3,7 @@ import { name, columns, ColumnsMap } from './config';
 
 /* eslint-disable camelcase */
 
-type LocalDBKeyID = 'lastProcessedEventNumber';
+type LocalDBKeyID = 'wellbeing';
 type LocalDBKeyType = 'integer' | 'text';
 
 /**

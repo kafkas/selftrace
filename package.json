@@ -37,7 +37,7 @@
     "expo-constants": "^8.0.0",
     "expo-haptics": "~8.0.0",
     "expo-sqlite": "~8.0.0",
-    "firebase": "^7.2.0",
+    "firebase": "7.11.0",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",

@@ -18,4 +18,5 @@ export function clear() {
   });
 }
 
+export * from './abstract';
 export * from './keys';

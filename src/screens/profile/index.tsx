@@ -65,7 +65,7 @@ const ProfileScreen = ({
       <SubmitButton
         label='Update'
         onPress={() => {
-          uploadUserInfo(email);
+          uploadUserInfo({ email });
         }}
         disabled={submitDisabled}
         loading={false}

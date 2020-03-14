@@ -4,7 +4,7 @@ import Text from '../Text';
 import TouchableRect, { TouchableRectProps } from '../TouchableRect';
 import Content, { ContentProps } from './Content';
 import { MARGIN_X, W_WIDTH, W_MARGIN } from '../../styles';
-import { INACTIVE_TEXT_COLOR } from '../../styles/colors';
+import { INACTIVE_TEXT_STYLES } from '../../styles/typography';
 
 const ANIMATION_DURATION = 200;
 
@@ -19,13 +19,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   label: {
+    ...INACTIVE_TEXT_STYLES,
     minWidth: 90,
     marginRight: MARGIN_X,
-    fontWeight: '600',
-    color: INACTIVE_TEXT_COLOR.toString(),
   },
   displayValue: {
-    fontWeight: '900',
+    fontWeight: '800',
   },
 });
 

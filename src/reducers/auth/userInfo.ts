@@ -4,17 +4,24 @@ import {
   AuthStatusAction,
   ActionType,
 } from '../../actions';
-import { Progress, ProgressStatus, AuthStatus } from '../../data-types';
+import {
+  Progress,
+  ProgressStatus,
+  AuthStatus,
+  Wellbeing,
+} from '../../data-types';
 
 export interface ReduxAuthUserInfo {
   uid: string | null;
   email: string | null;
+  wellbeing: Wellbeing | undefined;
   progress: Progress;
 }
 
 const INITIAL_STATE: Readonly<ReduxAuthUserInfo> = {
   uid: null,
   email: null,
+  wellbeing: undefined,
   progress: ProgressStatus.NIL,
 };
 

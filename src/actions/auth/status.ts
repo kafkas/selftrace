@@ -3,6 +3,7 @@ import * as API from '../../api';
 import { ActionCreator, AuthStatusAction, Dispatch, ActionType } from '..';
 import { ReduxAuthUserInfo } from '../../reducers/auth/userInfo';
 import { AuthStatus } from '../../data-types';
+import { pullRefreshFromLocalDB } from '../helpers';
 
 const setAuthStatusToSignedIn: ActionCreator<AuthStatusAction> = (
   userInfo: ReduxAuthUserInfo
@@ -19,7 +20,7 @@ const setAuthStatusToSignedOut: ActionCreator<AuthStatusAction> = () => ({
 export const subscribeToAuthStateChange = () => (dispatch: Dispatch) => {
   API.initialize();
 
-  return API.requestAuthStateListener((user: API.UserInfo) => {
+  return API.requestAuthStateListener(async (user: API.UserInfo) => {
     if (!user) {
       // Signed out
       Database.clear();
@@ -32,6 +33,8 @@ export const subscribeToAuthStateChange = () => (dispatch: Dispatch) => {
       email: user.email,
       uid: user.uid,
     };
+
+    await pullRefreshFromLocalDB(dispatch);
 
     return dispatch(setAuthStatusToSignedIn(userInfo));
   });
