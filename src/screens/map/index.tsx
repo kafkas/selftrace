@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import * as API from '../../api';
 import MapView from '../../components/MapView';
 import { W_WIDTH } from '../../styles';
 
@@ -16,8 +17,13 @@ function MapScreen() {
       <MapView
         region={testRegion}
         style={{ flex: 1, width: W_WIDTH }}
-        onRegionChangeComplete={region => {
-          // console.log('onRegionChange COMPLETE = ', region);
+        onRegionChangeComplete={async region => {
+          try {
+            const clusters = await API.requestClusters();
+            console.log('clusters = ', clusters);
+          } catch (err) {
+            // console.log('onRegionChange COMPLETE = ', region);
+          }
         }}
       />
     </View>

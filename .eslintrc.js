@@ -81,6 +81,7 @@ module.exports = {
       'error',
       { functions: false, classes: true, variables: false },
     ],
+    'prefer-template': 0,
     'react/destructuring-assignment': 0,
     'react/jsx-filename-extension': 0,
     'react/jsx-indent': 0,

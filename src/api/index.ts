@@ -8,4 +8,6 @@ export function initialize() {
 }
 
 export * from './auth';
+export * from './clusters';
+export * from './config';
 export * from './database';
