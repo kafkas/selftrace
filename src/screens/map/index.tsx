@@ -1,30 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View } from 'react-native';
 import * as API from '../../api';
-import MapView from '../../components/MapView';
-import { W_WIDTH } from '../../styles';
+import CoronaMap from '../../components/CoronaMap';
+import { Cluster, Region } from '../../data-types';
+import styles from './styles';
 
-const testRegion = {
-  latitude: 75.51279,
-  longitude: 10.09184,
-  latitudeDelta: 80,
-  longitudeDelta: 80,
-};
+interface State {
+  clusters: Cluster[];
+  isLoading: boolean;
+}
 
 function MapScreen() {
+  const [state, setState] = useState<State>({ clusters: [], isLoading: false });
+
+  async function handleRegionChange(region: Region) {
+    setState(prevState => ({ ...prevState, isLoading: true }));
+    try {
+      const receivedClusters = await API.requestClusters(region);
+      setState({ clusters: receivedClusters, isLoading: false });
+    } catch (err) {
+      setState(prevState => ({ ...prevState, isLoading: false }));
+    }
+  }
+
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <MapView
-        region={testRegion}
-        style={{ flex: 1, width: W_WIDTH }}
-        onRegionChangeComplete={async region => {
-          try {
-            const clusters = await API.requestClusters();
-            console.log('clusters = ', clusters);
-          } catch (err) {
-            // console.log('onRegionChange COMPLETE = ', region);
-          }
-        }}
+    <View style={styles.container}>
+      <CoronaMap
+        clusters={state.clusters}
+        onRegionChangeComplete={handleRegionChange}
+        style={styles.mapContainer}
       />
     </View>
   );
