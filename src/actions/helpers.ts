@@ -5,7 +5,7 @@ import {
   clearUpdateUserInfoProgress,
 } from './auth/userInfo';
 
-export async function pullRefreshFromLocalDB(dispatch: Dispatch) {
+export async function pullUserInfoFromLocalDBToRedux(dispatch: Dispatch) {
   try {
     const wellbeing = await Database.abstract.getWellbeing();
     dispatch(receiveUpdateUserInfoResponse({ wellbeing }));

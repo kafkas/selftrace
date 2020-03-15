@@ -1,9 +1,12 @@
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
+import * as TaskManager from 'expo-task-manager';
 import * as Database from '../../database';
 import * as API from '../../api';
 import { ActionCreator, AuthStatusAction, Dispatch, ActionType } from '..';
 import { ReduxAuthUserInfo } from '../../reducers/auth/userInfo';
 import { AuthStatus } from '../../data-types';
-import { pullRefreshFromLocalDB } from '../helpers';
+import { pullUserInfoFromLocalDBToRedux } from '../helpers';
 import { downloadUserInfoToLocalDB } from './userInfo';
 
 const setAuthStatusToSignedIn: ActionCreator<AuthStatusAction> = (
@@ -23,22 +26,59 @@ export const subscribeToAuthStateChange = () => (dispatch: Dispatch) => {
 
   return API.requestAuthStateListener(async (user: API.UserInfo) => {
     if (!user) {
-      // Signed out
+      // Case 1: Signed out
+
       Database.clear();
+      await TaskManager.unregisterAllTasksAsync();
       return dispatch(setAuthStatusToSignedOut());
     }
 
-    // Signed in
+    // Case 2: Signed in
+
     Database.initialize();
     const userInfo: ReduxAuthUserInfo = {
       email: user.email,
       uid: user.uid,
     };
 
-    // Download to DB
-    await downloadUserInfoToLocalDB(user.uid, dispatch);
-    await pullRefreshFromLocalDB(dispatch);
-
+    await downloadUserInfoToLocalDB(user.uid);
+    await pullUserInfoFromLocalDBToRedux(dispatch);
+    await handlePermissions();
+    await startLocationUpdates();
     return dispatch(setAuthStatusToSignedIn(userInfo));
   });
 };
+
+async function handlePermissions() {
+  const { granted, canAskAgain } = await Permissions.getAsync(
+    Permissions.LOCATION
+  );
+
+  if (!granted && canAskAgain) {
+    await Permissions.askAsync(Permissions.LOCATION);
+  }
+}
+
+async function startLocationUpdates() {
+  const { status } = await Permissions.getAsync(Permissions.LOCATION);
+
+  if (
+    status === 'granted' &&
+    TaskManager.isTaskDefined('sendLastLocationToBackend')
+  ) {
+    return Location.startLocationUpdatesAsync('sendLastLocationToBackend', {
+      accuracy: Location.Accuracy.High,
+      timeInterval: 600000, // 10 min
+      distanceInterval: 50, // in meters
+      showsBackgroundLocationIndicator: false,
+      // foregroundService: {
+      //   notificationTitle: '',
+      //   notificationBody: '',
+      //   notificationColor: '',
+      // },
+      pausesUpdatesAutomatically: true,
+    });
+  }
+
+  return Promise.resolve();
+}
