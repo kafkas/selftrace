@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { CLUSTERS_ENDPOINT } from './config';
-import { Cluster } from '../data-types';
+import { ClusterObject, RegionObject } from '../data-types';
 
-export async function requestClusters(region: Region) {
+export async function requestClusters(region: RegionObject) {
   try {
     const res = await axios.post(CLUSTERS_ENDPOINT, {
       region,
     });
-    const clusters = res.data as Cluster[];
+    const clusters = res.data as ClusterObject[]; // TODO: Fix later
     return Promise.resolve(clusters);
   } catch (err) {
     return Promise.reject(err);

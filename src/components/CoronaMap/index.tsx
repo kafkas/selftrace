@@ -2,24 +2,21 @@ import React from 'react';
 import { View } from 'react-native';
 import MapView, { MapViewProps, Marker } from 'react-native-maps';
 import Text from '../Text';
-import { Cluster } from '../../data-types';
+import { ClusterObject, AnonymListItem } from '../../data-types';
 
 export interface CoronaMapProps extends MapViewProps {
-  clusters: Cluster[];
+  clusters: AnonymListItem<ClusterObject>[];
 }
 
 export default function CoronaMap({ clusters, ...rest }: CoronaMapProps) {
   return (
     <MapView provider='google' {...rest}>
-      {clusters.map((cluster, idx) => {
-        const {
-          size,
-          location: { lat, lng },
-        } = cluster;
+      {clusters.map(({ data: cluster, key }) => {
+        const { lat, lng, positiveCount, showingSymptomsCount } = cluster;
+        const size = positiveCount + showingSymptomsCount;
         return (
           <Marker
-            // key={`${lat}-${lng}`}
-            key={idx.toString()}
+            key={key}
             coordinate={{
               latitude: lat,
               longitude: lng,
