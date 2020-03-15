@@ -27,7 +27,7 @@ function MapScreen() {
     <View style={styles.container}>
       <CoronaMap
         clusters={state.clusters}
-        onRegionChangeComplete={handleRegionChange}
+        // onRegionChangeComplete={handleRegionChange}
         style={styles.mapContainer}
       />
     </View>

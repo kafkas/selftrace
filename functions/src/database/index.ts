@@ -7,3 +7,4 @@ export const database = () => admin.firestore();
 export const auth = () => admin.auth();
 
 export * from './users';
+export * from './clusters';

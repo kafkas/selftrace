@@ -30,7 +30,7 @@ export default function CoronaMap({ clusters, ...rest }: CoronaMapProps) {
                 height: 30,
                 width: 30,
                 borderRadius: 15,
-                backgroundColor: 'pink',
+                backgroundColor: 'purple',
                 justifyContent: 'center',
                 alignItems: 'center',
               }}

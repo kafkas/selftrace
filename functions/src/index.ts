@@ -4,6 +4,7 @@
 
 import * as functions from 'firebase-functions';
 import * as Database from './database';
+import { Region } from './data-types';
 
 /*
  * 1. User
@@ -69,14 +70,6 @@ exports.processUserUpdate = functions.firestore
  * 2. HTTPS Requests
  */
 
-interface Cluster {
-  size: number;
-  location: {
-    lat: number;
-    lng: number;
-  };
-}
-
 /**
  * Clusters endpoint
  */
@@ -86,19 +79,16 @@ exports.processClusterRequest = functions.https.onRequest(
       response.status(400).send('This endpoint accepts only POST requests.');
       return;
     }
-
-    const data = request.body;
-    console.log('DATA WE RECEIVED BELOW');
-    console.log(data);
-
-    const responseBody: Cluster[] = [
-      { size: 4, location: { lat: 37.9838, lng: 23.7275 } },
-      { size: 6, location: { lat: 39.9838, lng: 28.7275 } },
-      { size: 1, location: { lat: 29.9838, lng: 18.7275 } },
-      { size: 2, location: { lat: 45.9838, lng: 32.7275 } },
-      { size: 5, location: { lat: 59.9838, lng: 67.7275 } },
-    ];
-
-    response.status(200).send(responseBody);
+    console.log('TYPEOF REQUEST.BODY');
+    console.log(typeof request.body);
+    const region = request.body as Region;
+    console.log('REGION.LATITUDE');
+    console.log(region.latitude);
+    try {
+      const clusters = await Database.retrieveClustersInRegion(region);
+      response.status(200).send(clusters);
+    } catch (err) {
+      response.status(400).send('Could not get clusters.');
+    }
   }
 );
