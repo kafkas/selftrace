@@ -4,7 +4,6 @@ import Icon from '../../components/Icon';
 import MapScreen from '../../screens/map';
 import AccountStack from './AccountStack';
 import FormStack from './FormStack';
-// import AnimatedTouchable from './AnimatedTouchable';
 
 const BTab = createBottomTabNavigator();
 

@@ -4,7 +4,7 @@ import Color from './Color';
 const rgb = (r: number, g: number, b: number): Color => new Color(r, g, b);
 
 export const PRIMARY_COLOR = rgb(224, 52, 89);
-export const CLUSTER_BASE_COLOR = rgb(219, 24, 102);
+export const CLUSTER_BASE_COLOR = rgb(242, 0, 97);
 export const BLUE_COLOR = rgb(26, 141, 249);
 export const RED_COLOR = rgb(230, 44, 62);
 export const WHITE_COLOR = rgb(255, 255, 255);

@@ -1,6 +1,7 @@
 import React from 'react';
 import MapView, { MapViewProps } from 'react-native-maps';
 import ClusterMarker from './ClusterMarker';
+
 import { ClusterObject, AnonymListItem } from '../../data-types';
 
 export interface CoronaMapProps extends MapViewProps {
