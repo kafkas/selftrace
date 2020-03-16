@@ -1,7 +1,7 @@
 import { usersCollection } from '..';
 import { Region, RegionObject, Cluster, ClusterObject } from '../../data-types';
 import { UserDoc } from '../users';
-import { usersPositiveOrShowingSymptomsInRegionMOCK } from './mock';
+// import { usersPositiveOrShowingSymptomsInRegionMOCK } from './mock';
 
 async function usersPositiveOrShowingSymptomsInRegion(region: Region) {
   try {

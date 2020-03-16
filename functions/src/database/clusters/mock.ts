@@ -17,7 +17,7 @@ function createRandomUsers(count: number): UserDoc[] {
   return users;
 }
 
-const randomlyCreatedUsers = createRandomUsers(500); // Treat as DB
+const randomlyCreatedUsers = createRandomUsers(1000); // Treat as DB
 
 export async function usersPositiveOrShowingSymptomsInRegionMOCK(
   region: Region
@@ -32,7 +32,7 @@ export async function usersPositiveOrShowingSymptomsInRegionMOCK(
       data: () => ({ ...user }),
     }));
 
-    return Promise.resolve(results);
+    return results;
   } catch (err) {
     return Promise.reject(err);
   }
