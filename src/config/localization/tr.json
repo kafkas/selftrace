@@ -1,0 +1,77 @@
+{
+  "buttons": {
+    "update": "Güncelle",
+    "forgotPassword": "Parolamı unuttum",
+    "reset": "Sıfırla",
+    "signin": "Giriş yap",
+    "signup": "Kayıt ol",
+    "signout": "Çıkış yap"
+  },
+  "alerts": {
+    "signout": {
+      "title": "Çıkış?",
+      "description": "Çıkış yapmak istediğinize emin misiniz?",
+      "option1": "Çıkış yap",
+      "cancel": "İptal"
+    }
+  },
+  "headers": {
+    "signin": "Giriş yap",
+    "signup": "Kayıt Ol",
+    "form": "Form",
+    "resetPassword": "Parolayı sıfırla",
+    "account": "Hesap",
+    "profile": "Profil",
+    "updatePassword": "Parolayı güncelle"
+  },
+  "inputs": {
+    "email": "E-posta",
+    "password": "Parola",
+    "newPasswordPlaceholder": "Yeni parolanız",
+    "confirmPasswordPlaceholder": "Yeni parolanızı tekrarlayın"
+  },
+  "screens": {
+    "account": {
+      "profile": "Profil",
+      "updatePassword": "Parolayı güncelle"
+    },
+    "map": {
+      "userTestedPositive": "Kullanıcının test sonucu pozitif",
+      "userShowingSymptoms": "Kullanıcı belirti gösteriyor",
+      "testedPositive": "Test sonucu pozitif",
+      "showingSymptoms": "Belirti gösteriyor"
+    }
+  },
+  "form": {
+    "topNote": "Lütfen sağlık durumunuzu güncel tutun. Aşağıdaki seçeneklerden herhangi birini seçebilirsiniz.",
+    "wellbeing": "Sağlık Durumu",
+    "important": "",
+    "note": "",
+    "options": {
+      "well": {
+        "label": "Her Şey Yolunda",
+        "description": "Test edilmedim ancak koronavirüs (COVID-19) belirtilerinin hiçbirini göstermiyorum. Her şey yolunda!",
+        "important": "",
+        "note": ""
+      },
+      "symptoms": {
+        "label": "Belirtiler Gösteriyorum",
+        "description": "Test edilmedim ve kendimi iyi hissetmiyorum. Sanırım bazı koronavirüs (COVID-19) belirtilerini gösteriyorum.",
+        "important": "Bu seçeneği seçtiğiniz takdirde diğer kullanıcıların sizinle aranıza mesafe koymalarını teşvik etmek için yaklaşık konumunuzu ve sağlık durumunuzu harita üzerinde göstereceğimizi lütfen dikkate alın. Bunu yaparken kimliğinizi ortaya çıkarabilecek bilgileri asla paylaşmayacağız.",
+        "note": "Belirtileriniz hafif olsa bile bu seçeneği seçmeniz yararlı olabilir."
+      },
+      "negative": {
+        "label": "Test Sonucum Negatif",
+        "description": "Test edildim. Sonuçlara göre koronavirüsüm (COVID-19) yok.",
+        "important": "",
+        "note": ""
+      },
+      "positive": {
+        "label": "Test Sonucum Pozitif",
+        "description": "Test edildim. Sonuçlara göre koronavirüsüm (COVID-19) var.",
+        "important": "Bu seçeneği seçtiğiniz takdirde diğer kullanıcıların sizinle aranıza mesafe koymalarını teşvik etmek için yaklaşık konumunuzu ve sağlık durumunuzu harita üzerinde göstereceğimizi lütfen dikkate alın. Bunu yaparken kimliğinizi ortaya çıkarabilecek bilgileri asla paylaşmayacağız.",
+        "note": ""
+      }
+    }
+  }
+}

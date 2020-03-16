@@ -1,0 +1,77 @@
+{
+  "buttons": {
+    "update": "Update",
+    "forgotPassword": "Forgot my password",
+    "reset": "Reset",
+    "signin": "Sign in",
+    "signup": "Sign up",
+    "signout": "Sign out"
+  },
+  "alerts": {
+    "signout": {
+      "title": "Sign out?",
+      "description": "Are you sure you want to sign out?",
+      "option1": "Sign out",
+      "cancel": "Cancel"
+    }
+  },
+  "headers": {
+    "signin": "Sign in",
+    "signup": "Sign Up",
+    "form": "Form",
+    "resetPassword": "Reset password",
+    "account": "Account",
+    "profile": "Profile",
+    "updatePassword": "Update password"
+  },
+  "inputs": {
+    "email": "Email",
+    "password": "Password",
+    "newPasswordPlaceholder": "Your new password",
+    "confirmPasswordPlaceholder": "Confirm new password"
+  },
+  "screens": {
+    "account": {
+      "profile": "Profile",
+      "updatePassword": "Update password"
+    },
+    "map": {
+      "userTestedPositive": "User tested positive",
+      "userShowingSymptoms": "User showing symptoms",
+      "testedPositive": "Tested positive",
+      "showingSymptoms": "Showing symptoms"
+    }
+  },
+  "form": {
+    "topNote": "Please keep your well-being status up to date. You can choose one of the following options.",
+    "wellbeing": "Well-being",
+    "important": "Important",
+    "note": "Note",
+    "options": {
+      "well": {
+        "label": "Feeling Well",
+        "description": "I have not been tested but don't show any of the coronavirus (COVID-19) symptoms. All is well!",
+        "important": "",
+        "note": ""
+      },
+      "symptoms": {
+        "label": "Showing Symptoms",
+        "description": "I have not been tested and I am feeling unwell. I think I am showing some of the coronavirus (COVID-19) symptoms.",
+        "important": "Please note that if you choose this option, we will display your approximate location and your well-being status on the map in order to encourage other users to self-distance. We will never share information that may reveal your identity.",
+        "note": "It may prove helpful to choose this option even if your symptoms are mild."
+      },
+      "negative": {
+        "label": "Tested Negative",
+        "description": "I have been tested. According to the results, I don't have coronavirus (COVID-19).",
+        "important": "",
+        "note": ""
+      },
+      "positive": {
+        "label": "Tested Positive",
+        "description": "I have been tested. According to the results, I have coronavirus (COVID-19).",
+        "important": "Please note that if you choose this option, we will display your approximate location on the map in order to encourage other users to self-distance. We will never share your identity.",
+        "note": ""
+      }
+    }
+  }
+}

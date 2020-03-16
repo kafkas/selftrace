@@ -1,0 +1,77 @@
+{
+  "buttons": {
+    "update": "",
+    "forgotPassword": "",
+    "reset": "",
+    "signin": "",
+    "signup": "",
+    "signout": ""
+  },
+  "alerts": {
+    "signout": {
+      "title": "",
+      "description": "",
+      "option1": "",
+      "cancel": ""
+    }
+  },
+  "headers": {
+    "signin": "",
+    "signup": "",
+    "form": "",
+    "resetPassword": "",
+    "account": "",
+    "profile": "",
+    "updatePassword": ""
+  },
+  "inputs": {
+    "email": "",
+    "password": "",
+    "newPasswordPlaceholder": "",
+    "confirmPasswordPlaceholder": ""
+  },
+  "screens": {
+    "account": {
+      "profile": "",
+      "updatePassword": ""
+    },
+    "map": {
+      "userTestedPositive": "",
+      "userShowingSymptoms": "",
+      "testedPositive": "",
+      "showingSymptoms": ""
+    }
+  },
+  "form": {
+    "topNote": "Пожалуйста, держите ваше здоровье в своевременном состоянии. Вы можете выбрать один из следующих вариантов.",
+    "wellbeing": "Здоровье",
+    "important": "",
+    "note": "",
+    "options": {
+      "well": {
+        "label": "Все Хорошо",
+        "description": "Я не был проверен, но не показываю никаких признаков коронавируса (КОВИД-19). Все хорошо!",
+        "important": "",
+        "note": ""
+      },
+      "symptoms": {
+        "label": "Показываю Симптомы",
+        "description": "Я не был проверен, и я чувствую себя плохо. Я думаю, что я показываю некоторые симптомы коронавируса (КОВИД-19).",
+        "important": "",
+        "note": "Может оказаться полезным выбрать этот вариант, даже если у вас слабые симптомы."
+      },
+      "negative": {
+        "label": "Отрицательный Результат",
+        "description": "Я был проверен. Согласно результатам, у меня нет коронавируса (КОВИД-19).",
+        "important": "",
+        "note": ""
+      },
+      "positive": {
+        "label": "Положительный Результат",
+        "description": "Я был проверен. По результатам у меня есть коронавирус (КОВИД-19).",
+        "important": "",
+        "note": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "buttons": {
+    "update": "",
+    "forgotPassword": "",
+    "reset": "",
+    "signin": "",
+    "signup": "",
+    "signout": ""
+  },
+  "alerts": {
+    "signout": {
+      "title": "",
+      "description": "",
+      "option1": "",
+      "cancel": ""
+    }
+  },
+  "headers": {
+    "signin": "",
+    "signup": "",
+    "form": "",
+    "resetPassword": "",
+    "account": "",
+    "profile": "",
+    "updatePassword": ""
+  },
+  "inputs": {
+    "email": "",
+    "password": "",
+    "newPasswordPlaceholder": "",
+    "confirmPasswordPlaceholder": ""
+  },
+  "screens": {
+    "account": {
+      "profile": "",
+      "updatePassword": ""
+    },
+    "map": {
+      "userTestedPositive": "",
+      "userShowingSymptoms": "",
+      "testedPositive": "",
+      "showingSymptoms": ""
+    }
+  },
+  "form": {
+    "topNote": "",
+    "wellbeing": "",
+    "important": "",
+    "note": "",
+    "options": {
+      "well": {
+        "label": "",
+        "description": "",
+        "important": "",
+        "note": ""
+      },
+      "symptoms": {
+        "label": "",
+        "description": "",
+        "important": "",
+        "note": ""
+      },
+      "negative": {
+        "label": "",
+        "description": "",
+        "important": "",
+        "note": ""
+      },
+      "positive": {
+        "label": "",
+        "description": "",
+        "important": "",
+        "note": ""
+      }
+    }
+  }
+}
