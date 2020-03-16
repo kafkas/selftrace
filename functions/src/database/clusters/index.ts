@@ -1,7 +1,7 @@
 import { usersCollection } from '..';
 import { Region, RegionObject, Cluster, ClusterObject } from '../../data-types';
 import { UserDoc } from '../users';
-// import { usersPositiveOrShowingSymptomsInRegionMOCK } from './mock';
+import { usersPositiveOrShowingSymptomsInRegionMOCK } from './mock';
 
 async function usersPositiveOrShowingSymptomsInRegion(region: Region) {
   try {
@@ -33,7 +33,9 @@ export async function queryForClustersInRegion(
     regionObj.longitudeDelta
   );
   try {
-    const filteredUsers = await usersPositiveOrShowingSymptomsInRegion(region);
+    const filteredUsers = await usersPositiveOrShowingSymptomsInRegionMOCK(
+      region
+    );
 
     // Divide into sub-regions. Consider it a virtual matrix of regions
     const subregions = region.getSubregions(10, 8);

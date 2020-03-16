@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, ScrollView } from 'react-native';
 import { bindActionCreators } from 'redux';
+import i18n from 'i18n-js';
 import { connect } from 'react-redux';
 import SubmitButton from '../../components/Button/Submit';
 import FormContainer from '../../components/FormContainer';
@@ -16,45 +17,13 @@ interface WellbeingObject {
   value: Wellbeing;
   label: string;
   description: string;
+  important: string;
   note: string;
 }
 
 interface WellbeingOptionMap {
   [key: Wellbeing]: Omit<WellbeingObject, 'value'>;
 }
-
-const WELLBEING_OPTION_MAP: WellbeingOptionMap = {
-  [Wellbeing.NotTested]: {
-    label: 'Feeling Well',
-    description:
-      "I have not been tested but don't show any of the coronavirus (COVID-19) symptoms. All is well!",
-    note: '',
-  },
-  [Wellbeing.ShowingSymptoms]: {
-    label: 'Showing Symptoms',
-    description:
-      'I have not been tested and I am feeling unwell. I think I am showing some of the coronavirus (COVID-19) symptoms.',
-    note:
-      'It may prove helpful to choose this option even if your symptoms are mild.',
-  },
-  [Wellbeing.TestedNegative]: {
-    label: 'Tested Negative',
-    description:
-      "I have been tested. According to the results, I don't have coronavirus (COVID-19).",
-    note: '',
-  },
-  [Wellbeing.TestedPositive]: {
-    label: 'Tested Positive',
-    description:
-      'I have been tested. According to the results, I have coronavirus (COVID-19).',
-    note: '',
-  },
-};
-
-const WELLBEING_OPTIONS = Object.keys(WELLBEING_OPTION_MAP).map(rawVal => {
-  const value: Wellbeing = Number(rawVal);
-  return { value, ...WELLBEING_OPTION_MAP[value] };
-});
 
 const mapStateToProps = (state: ReduxRoot) => ({
   currentWellbeing: state.auth.userInfo.wellbeing,
@@ -83,6 +52,38 @@ function FormScreen({
 }: Props) {
   const [wellbeing, setWellbeing] = useState(currentWellbeing);
 
+  const WELLBEING_OPTION_MAP: WellbeingOptionMap = {
+    [Wellbeing.NotTested]: {
+      label: i18n.t('form.options.well.label'),
+      description: i18n.t('form.options.well.description'),
+      important: i18n.t('form.options.well.important'),
+      note: i18n.t('form.options.well.note'),
+    },
+    [Wellbeing.ShowingSymptoms]: {
+      label: i18n.t('form.options.symptoms.label'),
+      description: i18n.t('form.options.symptoms.description'),
+      important: i18n.t('form.options.symptoms.important'),
+      note: i18n.t('form.options.symptoms.note'),
+    },
+    [Wellbeing.TestedNegative]: {
+      label: i18n.t('form.options.negative.label'),
+      description: i18n.t('form.options.negative.description'),
+      important: i18n.t('form.options.negative.important'),
+      note: i18n.t('form.options.negative.note'),
+    },
+    [Wellbeing.TestedPositive]: {
+      label: i18n.t('form.options.positive.label'),
+      description: i18n.t('form.options.positive.description'),
+      important: i18n.t('form.options.positive.important'),
+      note: i18n.t('form.options.positive.note'),
+    },
+  };
+
+  const WELLBEING_OPTIONS = Object.keys(WELLBEING_OPTION_MAP).map(rawVal => {
+    const value: Wellbeing = Number(rawVal);
+    return { value, ...WELLBEING_OPTION_MAP[value] };
+  });
+
   const wellbeingObj: WellbeingObject | undefined =
     WELLBEING_OPTION_MAP[wellbeing];
   const submitDisabled = !wellbeing || currentWellbeing === wellbeing;
@@ -100,18 +101,14 @@ function FormScreen({
       contentContainerStyle={styles.contentContainer}
     >
       <View style={styles.textContainer}>
-        <Text style={styles.topText}>
-          Please keep your well-being status up to date. You can choose one of
-          the following options.
-        </Text>
+        <Text style={styles.topText}>{i18n.t('form.topNote')}</Text>
       </View>
       <FormContainer progress={progress}>
         <Picker
-          label='Well-being'
+          label={i18n.t('form.wellbeing')}
           displayValue={wellbeing ? WELLBEING_OPTION_MAP[wellbeing].label : ''}
           selectedValue={wellbeing}
           onValueChange={val => setWellbeing(val)}
-          // itemStyle={{ fontSize: 15 }}
           items={WELLBEING_OPTIONS}
         />
         {wellbeingObj && (
@@ -119,14 +116,20 @@ function FormScreen({
             <Text style={styles.descriptionText}>
               {wellbeingObj.description}
             </Text>
-            {!!wellbeingObj.note && (
-              // <View style={styles.noteSection}>
-              //   <Text style={styles.noteTitle}>Note: </Text>
-              //   <Text style={styles.noteText}>{wellbeingObj.note}</Text>
-              // </View>
+            {!!wellbeingObj.important && (
               <View style={styles.noteSection}>
                 <Text>
-                  <Text style={styles.noteTitle}>Note: </Text>
+                  <Text style={styles.noteTitle}>
+                    {i18n.t('form.important')}:{' '}
+                  </Text>
+                  <Text style={styles.noteText}>{wellbeingObj.important}</Text>
+                </Text>
+              </View>
+            )}
+            {!!wellbeingObj.note && (
+              <View style={styles.noteSection}>
+                <Text>
+                  <Text style={styles.noteTitle}>{i18n.t('form.note')}: </Text>
                   <Text style={styles.noteText}>{wellbeingObj.note}</Text>
                 </Text>
               </View>
@@ -135,7 +138,7 @@ function FormScreen({
         )}
       </FormContainer>
       <SubmitButton
-        label='Update'
+        label={i18n.t('buttons.update')}
         onPress={() => {
           uploadUserInfo({ wellbeing: wellbeing!.valueOf() });
         }}

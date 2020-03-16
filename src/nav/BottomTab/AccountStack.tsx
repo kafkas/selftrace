@@ -1,5 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+import i18n from 'i18n-js';
 import AccountScreen from '../../screens/account';
 import ProfileScreen from '../../screens/profile';
 import PasswordUpdateScreen from '../../screens/password-update';
@@ -18,7 +19,7 @@ export default function AccountStack() {
         component={AccountScreen}
         options={{
           ...StackScreenOptions,
-          headerTitle: 'Account',
+          headerTitle: i18n.t('headers.account'),
         }}
       />
       <Stack.Screen
@@ -26,7 +27,7 @@ export default function AccountStack() {
         component={ProfileScreen}
         options={{
           ...StackScreenOptions,
-          headerTitle: 'Profile',
+          headerTitle: i18n.t('headers.profile'),
         }}
       />
       <Stack.Screen
@@ -34,7 +35,7 @@ export default function AccountStack() {
         component={PasswordUpdateScreen}
         options={{
           ...StackScreenOptions,
-          headerTitle: 'Update password',
+          headerTitle: i18n.t('headers.updatePassword'),
         }}
       />
     </Stack.Navigator>

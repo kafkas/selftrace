@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ScrollView } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import i18n from 'i18n-js';
 import SubmitButton from '../../components/Button/Submit';
 import FormContainer from '../../components/FormContainer';
 import EmailInput from '../../components/TextInput/Email';
@@ -63,7 +64,7 @@ const ProfileScreen = ({
         />
       </FormContainer>
       <SubmitButton
-        label='Update'
+        label={i18n.t('buttons.update')}
         onPress={() => {
           uploadUserInfo({ email });
         }}

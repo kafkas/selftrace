@@ -7,7 +7,9 @@ import { decode, encode } from 'base-64';
 import * as API from './api';
 import store from './store';
 import App from './App';
+import './config/localization';
 
+// Define these to prevent firebase error
 if (!global.btoa) {
   global.btoa = encode;
 }
@@ -16,6 +18,7 @@ if (!global.atob) {
   global.atob = decode;
 }
 
+// Define background tasks
 TaskManager.defineTask(
   'sendLastLocationToBackend',
   async ({ data: { locations }, error }) => {

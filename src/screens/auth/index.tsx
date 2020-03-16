@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import i18n from 'i18n-js';
 import ButtonOpacity from '../../components/Button/Opacity';
 import SubmitButton from '../../components/Button/Submit';
 import FormContainer from '../../components/FormContainer';
@@ -24,9 +25,9 @@ import { ProgressStatus } from '../../data-types';
 import AuthUtils from '../../util/AuthUtils';
 import { W_WIDTH } from '../../styles';
 import {
-  PRIMARY_COLOR,
   INACTIVE_ICON_COLOR,
   INACTIVE_TEXT_COLOR,
+  BLUE_COLOR,
 } from '../../styles/colors';
 import styles, { IMAGE_SIZE } from './styles';
 
@@ -172,13 +173,13 @@ const AuthScreen = ({
           {[
             {
               id: 'signin',
-              label: 'Sign in',
+              label: i18n.t('buttons.signin'),
               onPress: () => signinUser(email, password),
               loading: signinProgress.status === ProgressStatus.REQUEST,
             },
             {
               id: 'signup',
-              label: 'Sign up',
+              label: i18n.t('buttons.signup'),
               onPress: () => signupUser(email, password),
               loading: signupProgress.status === ProgressStatus.REQUEST,
             },
@@ -192,7 +193,7 @@ const AuthScreen = ({
               />
               {b.id === 'signin' && (
                 <ButtonOpacity
-                  label='Forgot my password'
+                  label={i18n.t('buttons.forgotPassword')}
                   labelColor={INACTIVE_TEXT_COLOR}
                   labelWeight='500'
                   onPress={() => navigation.navigate('PasswordResetScreen')}
@@ -206,7 +207,7 @@ const AuthScreen = ({
       <ScrollingIndicator
         ballCount={2}
         scrollX={safeScrollX}
-        activeColor={PRIMARY_COLOR.toString()}
+        activeColor={BLUE_COLOR.toString()}
         inactiveColor={INACTIVE_ICON_COLOR.toString()}
         style={styles.indicator}
       />

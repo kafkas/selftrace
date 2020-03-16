@@ -19,7 +19,9 @@ export default StyleSheet.create({
   topText: {
     ...INACTIVE_TEXT_STYLES,
   },
-  descriptionText: {},
+  descriptionText: {
+    marginBottom: 5,
+  },
   noteSection: {
     marginTop: MIN_MARGIN_Y,
   },

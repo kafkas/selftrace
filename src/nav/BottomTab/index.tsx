@@ -12,7 +12,6 @@ export default function BottomTab() {
     <BTab.Navigator
       initialRouteName='FormStack'
       tabBarOptions={{ showLabel: false }}
-      screenOptions={{ title: 'ass' }}
     >
       <BTab.Screen
         name='FormStack'

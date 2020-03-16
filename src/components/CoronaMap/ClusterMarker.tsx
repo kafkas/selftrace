@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Marker, Callout, CalloutSubview } from 'react-native-maps';
+import i18n from 'i18n-js';
 import Text from '../Text';
 import { ClusterObject } from '../../data-types';
 import { CLUSTER_BASE_COLOR } from '../../styles/colors';
@@ -68,16 +69,16 @@ export default function ClusterMarker({ cluster }: Props) {
           {size === 1 ? (
             <Text style={styles.calloutDescription}>
               {positiveCount === 1
-                ? 'User tested positive'
-                : 'User showing symptoms'}
+                ? i18n.t('screens.map.userTestedPositive')
+                : i18n.t('screens.map.userShowingSymptoms')}
             </Text>
           ) : (
             <>
               <Text style={styles.calloutDescription}>
-                Tested positive: {positiveCount}
+                {i18n.t('screens.map.testedPositive')}: {positiveCount}
               </Text>
               <Text style={styles.calloutDescription}>
-                Showing symptoms: {showingSymptomsCount}
+                {i18n.t('screens.map.testedPositive')}: {showingSymptomsCount}
               </Text>
             </>
           )}

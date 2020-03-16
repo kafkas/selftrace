@@ -8,9 +8,6 @@ import { RegionObject } from '.';
 interface Region extends RegionObject {}
 
 class Region {
-  private rowCount: number;
-  private colCount: number;
-
   constructor(
     centerLat: number,
     centerLng: number,

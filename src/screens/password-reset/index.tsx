@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ScrollView } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import i18n from 'i18n-js';
 import AuthUtils from '../../util/AuthUtils';
 import SubmitButton from '../../components/Button/Submit';
 import FormContainer from '../../components/FormContainer';
@@ -65,7 +66,7 @@ const PasswordResetScreen = ({
         />
       </FormContainer>
       <SubmitButton
-        label='Reset'
+        label={i18n.t('buttons.reset')}
         onPress={() => {
           resetUserPassword(email);
         }}

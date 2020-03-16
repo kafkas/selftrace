@@ -17,7 +17,7 @@ function MapScreen() {
   async function handleRegionChange(regionObj: RegionObject) {
     setState(prevState => ({ ...prevState, isLoading: true }));
     try {
-      const receivedClusters = await API.requestClusters(regionObj);
+      const receivedClusters = await API.requestClusters(regionObj, true);
       setState({
         clusters: receivedClusters.map(cluster => ({
           key: ReactUtils.generateListKey(),

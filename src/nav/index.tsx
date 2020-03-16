@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import i18n from 'i18n-js';
 import BottomTab from './BottomTab';
 import AuthScreen from '../screens/auth';
 import PasswordResetScreen from '../screens/password-reset';
@@ -32,7 +33,7 @@ export default function Layout({ authStatus }: Props) {
               options={{
                 ...StackScreenOptions,
                 headerShown: false,
-                headerTitle: 'Sign in',
+                headerTitle: i18n.t('headers.signin'),
                 animationTypeForReplace: isSignedOut ? 'pop' : 'push',
               }}
             />
@@ -41,7 +42,7 @@ export default function Layout({ authStatus }: Props) {
               component={PasswordResetScreen}
               options={{
                 ...StackScreenOptions,
-                headerTitle: 'Reset password',
+                headerTitle: i18n.t('headers.resetPassword'),
               }}
             />
           </>

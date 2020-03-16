@@ -2,6 +2,7 @@ import React, { ReactElement, useState, useEffect } from 'react';
 import { ScrollView } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import i18n from 'i18n-js';
 import SubmitButton from '../../components/Button/Submit';
 import FormContainer from '../../components/FormContainer';
 import PasswordInput from '../../components/TextInput/Password';
@@ -63,8 +64,7 @@ const PasswordResetScreen = ({
             if (progress.status !== ProgressStatus.NIL) clearProgress();
             setPassword1(text);
           }}
-          label='Password'
-          placeholder='Your new password'
+          placeholder={i18n.t('inputs.newPasswordPlaceholder')}
         />
         <PasswordInput
           value={password2}
@@ -72,12 +72,11 @@ const PasswordResetScreen = ({
             if (progress.status !== ProgressStatus.NIL) clearProgress();
             setPassword2(text);
           }}
-          label='Password'
-          placeholder='Confirm new password'
+          placeholder={i18n.t('inputs.confirmPasswordPlaceholder')}
         />
       </FormContainer>
       <SubmitButton
-        label='Update'
+        label={i18n.t('buttons.update')}
         onPress={() => {
           updateUserPassword(password1);
         }}
