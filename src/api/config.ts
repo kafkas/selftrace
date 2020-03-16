@@ -10,6 +10,9 @@ const config = {
 };
 
 export const BASE_URL = `https://us-central1-${config.projectId}.cloudfunctions.net`;
+
 export const CLUSTERS_ENDPOINT = BASE_URL + '/processClusterRequest';
+export const CLUSTERS_ENDPOINT_DEV =
+  'http://localhost:5000/corona-688fb/us-central1/processClusterRequest';
 
 export default config;

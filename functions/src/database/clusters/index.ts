@@ -1,27 +1,66 @@
-import MarkerClusterer from '@google/markerclustererplus';
 import { usersCollection } from '..';
-import { Region, Cluster } from '../../data-types';
+import { Region, RegionObject, Cluster, ClusterObject } from '../../data-types';
+import { UserDoc } from '../users';
+import { usersPositiveOrShowingSymptomsInRegionMOCK } from './mock';
+
+async function usersPositiveOrShowingSymptomsInRegion(region: Region) {
+  try {
+    const sickUsersSnapshot = await usersCollection()
+      .where('wellbeing', 'in', [2, 4])
+      .get();
+    const sickUsersInRegion = sickUsersSnapshot.docs.filter(snap => {
+      const userDoc = snap.data() as UserDoc;
+      const { lat, lng } = userDoc.lastLocation!;
+      return region.contains(lat, lng);
+    });
+
+    return Promise.resolve(sickUsersInRegion);
+  } catch (err) {
+    return Promise.reject(err);
+  }
+}
 
 /**
  * The main clustering algorithm.
  */
-export async function retrieveClustersInRegion(
-  region: Region
-): Promise<Cluster[]> {
-  const clusters: Cluster[] = [];
+export async function queryForClustersInRegion(
+  regionObj: RegionObject
+): Promise<ClusterObject[]> {
+  const region = new Region(
+    regionObj.latitude,
+    regionObj.longitude,
+    regionObj.latitudeDelta,
+    regionObj.longitudeDelta
+  );
+  try {
+    const filteredUsers = await usersPositiveOrShowingSymptomsInRegion(region);
 
-  //   const responseBody: Cluster[] = [
-  //     { size: 4, location: { lat: 37.9838, lng: 23.7275 } },
-  //     { size: 6, location: { lat: 39.9838, lng: 28.7275 } },
-  //     { size: 1, location: { lat: 29.9838, lng: 18.7275 } },
-  //     { size: 2, location: { lat: 45.9838, lng: 32.7275 } },
-  //     { size: 5, location: { lat: 59.9838, lng: 67.7275 } },
-  //   ];
-  const filteredUsers = await usersCollection()
-    .where()
-    .get();
+    // Divide into sub-regions. Consider it a virtual matrix of regions
+    const subregions = region.getSubregions(10, 8);
 
-  const aaa = new MarkerClusterer();
+    // For each sub-region we create a Cluster object
+    const clusters = subregions.map(() => new Cluster());
 
-  filteredUsers.docs.map;
+    // Iterate through sick users and put into correct cluster
+    filteredUsers.forEach(snapshot => {
+      const data = snapshot.data() as UserDoc;
+      const { lat, lng } = data.lastLocation!;
+      const wellbeing = data.wellbeing!;
+
+      let index = 0;
+      for (let i = 0; i < subregions.length; i++) {
+        if (subregions[i].contains(lat, lng)) {
+          index = i;
+          break;
+        }
+      }
+
+      const cluster = clusters[index];
+      cluster.add(lat, lng, wellbeing);
+    });
+
+    return clusters.filter(cluster => cluster.size() > 0);
+  } catch (err) {
+    return Promise.reject(err);
+  }
 }

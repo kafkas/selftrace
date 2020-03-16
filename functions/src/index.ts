@@ -4,7 +4,7 @@
 
 import * as functions from 'firebase-functions';
 import * as Database from './database';
-import { Region } from './data-types';
+import { RegionObject } from './data-types';
 
 /*
  * 1. User
@@ -74,19 +74,16 @@ exports.processUserUpdate = functions.firestore
  * Clusters endpoint
  */
 exports.processClusterRequest = functions.https.onRequest(
-  (request, response) => {
+  async (request, response) => {
     if (request.method !== 'POST') {
       response.status(400).send('This endpoint accepts only POST requests.');
       return;
     }
-    console.log('TYPEOF REQUEST.BODY');
-    console.log(typeof request.body);
-    const region = request.body as Region;
-    console.log('REGION.LATITUDE');
-    console.log(region.latitude);
+    const regionObj = request.body.region as RegionObject;
     try {
-      const clusters = await Database.retrieveClustersInRegion(region);
+      const clusters = await Database.queryForClustersInRegion(regionObj);
       response.status(200).send(clusters);
+      return;
     } catch (err) {
       response.status(400).send('Could not get clusters.');
     }
