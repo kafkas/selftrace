@@ -28,7 +28,7 @@
     "email": "E-posta",
     "password": "Parola",
     "newPasswordPlaceholder": "Yeni parolanız",
-    "confirmPasswordPlaceholder": "Yeni parolanızı tekrarlayın"
+    "confirmPasswordPlaceholder": "Yeni parolanızı onaylayın"
   },
   "screens": {
     "account": {
