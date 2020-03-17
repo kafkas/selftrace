@@ -4055,3 +4055,816 @@
 [info] i  functions: Finished "processClusterRequest" in ~1s
 [debug] [2020-03-16T20:50:56.113Z] [worker-processClusterRequest-b7c2bad5-c11a-4e25-861f-04454ebb620c]: IDLE
 [debug] [2020-03-16T20:50:56.114Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:25:14.542Z] ----------------------------------------------------------------------
+[debug] [2020-03-17T03:25:14.544Z] Command:       /usr/local/Cellar/node/12.6.0/bin/node /usr/local/bin/firebase serve --only functions
+[debug] [2020-03-17T03:25:14.544Z] CLI Version:   7.15.0
+[debug] [2020-03-17T03:25:14.544Z] Platform:      darwin
+[debug] [2020-03-17T03:25:14.544Z] Node Version:  v12.6.0
+[debug] [2020-03-17T03:25:14.545Z] Time:          Tue Mar 17 2020 06:25:14 GMT+0300 (GMT+03:00)
+[debug] [2020-03-17T03:25:14.545Z] ----------------------------------------------------------------------
+[debug] [2020-03-17T03:25:14.545Z] 
+[debug] [2020-03-17T03:25:14.563Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-17T03:25:14.564Z] > authorizing via signed-in user
+[debug] [2020-03-17T03:25:14.564Z] [iam] checking project corona-688fb for permissions ["firebase.projects.get"]
+[debug] [2020-03-17T03:25:14.565Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-03-17T03:25:14.565Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-03-17T03:25:14.780Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-17T03:25:14.793Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/corona-688fb:testIamPermissions  
+
+[debug] [2020-03-17T03:25:15.461Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-17T03:25:15.462Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/corona-688fb  
+ 
+[debug] [2020-03-17T03:25:15.868Z] <<< HTTP RESPONSE 200
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "12"
+[info] ✔  functions: functions emulator started at http://localhost:5000
+[info] i  functions: Watching "/Users/anarkafkas/Projects/Corona/corona/functions" for Cloud Functions...
+[debug] [2020-03-17T03:25:15.904Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-17T03:25:15.904Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-03-17T03:25:15.904Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-17T03:25:15.905Z] [worker-~diagnostic~-c576f74a-3c38-41e2-9cf2-c3f1f0c5d093]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69152.sock
+[debug] [2020-03-17T03:25:15.905Z] [worker-~diagnostic~-c576f74a-3c38-41e2-9cf2-c3f1f0c5d093]: BUSY
+[debug] [2020-03-17T03:25:16.129Z] [runtime-status] [69152] Functions runtime initialized. {"cwd":"/Users/anarkafkas/Projects/Corona/corona/functions","node_version":"12.6.0"}
+[debug] [2020-03-17T03:25:16.130Z] [runtime-status] [69152] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-17T03:25:16.133Z] [runtime-status] [69152] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.10.0","resolution":"/Users/anarkafkas/Projects/Corona/corona/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-03-17T03:25:16.135Z] [runtime-status] [69152] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/anarkafkas/Projects/Corona/corona/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-17T03:25:16.136Z] [runtime-status] [69152] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/anarkafkas/Projects/Corona/corona/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-17T03:25:16.574Z] Unsupported trigger: {"eventTrigger":{"resource":"projects/corona-688fb","eventType":"providers/firebase.auth/eventTypes/user.create","service":"firebaseauth.googleapis.com"},"name":"processUserCreation","entryPoint":"processUserCreation"}
+[debug] [2020-03-17T03:25:16.574Z] Unsupported trigger: {"eventTrigger":{"resource":"projects/corona-688fb","eventType":"providers/firebase.auth/eventTypes/user.delete","service":"firebaseauth.googleapis.com"},"name":"processUserDeletion","entryPoint":"processUserDeletion"}
+[info] ✔  functions[processClusterRequest]: http function initialized (http://localhost:5000/corona-688fb/us-central1/processClusterRequest).
+[info] i  functions[processUserCreation]: function ignored because the auth emulator does not exist or is not running.
+[info] i  functions[processUserDeletion]: function ignored because the auth emulator does not exist or is not running.
+[info] i  functions[processUserUpdate]: function ignored because the firestore emulator does not exist or is not running.
+[debug] [2020-03-17T03:25:16.575Z] [worker-~diagnostic~-c576f74a-3c38-41e2-9cf2-c3f1f0c5d093]: IDLE
+[debug] [2020-03-17T03:25:25.863Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:25:25.864Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:25:25.864Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:25:25.870Z] [worker-pool] addWorker(processClusterRequest)
+[debug] [2020-03-17T03:25:25.870Z] [worker-pool] Adding worker with key processClusterRequest, total=1
+[debug] [2020-03-17T03:25:25.870Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:25:25.870Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:25:25.871Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:25:26.112Z] [runtime-status] [69171] Functions runtime initialized. {"cwd":"/Users/anarkafkas/Projects/Corona/corona/functions","node_version":"12.6.0"}
+[debug] [2020-03-17T03:25:26.113Z] [runtime-status] [69171] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-17T03:25:26.115Z] [runtime-status] [69171] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.10.0","resolution":"/Users/anarkafkas/Projects/Corona/corona/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-03-17T03:25:26.117Z] [runtime-status] [69171] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/anarkafkas/Projects/Corona/corona/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-17T03:25:26.117Z] [runtime-status] [69171] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/anarkafkas/Projects/Corona/corona/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-17T03:25:26.389Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:25:26.390Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:25:26.391Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:25:26.400Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:25:26.415Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:25:26.467Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:25:26.476Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:25:26.478Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:25:26.478Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:26:14.362Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:26:14.362Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:26:14.362Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:26:14.362Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:26:14.362Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:14.362Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:26:14.363Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:26:14.363Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:26:14.363Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:26:14.364Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:14.364Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:26:14.367Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:26:14.372Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:26:14.376Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:26:14.376Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:26:17.106Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:26:17.106Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:26:17.106Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:26:17.106Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:26:17.106Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:17.106Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:26:17.107Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:26:17.107Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:26:17.107Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:26:17.107Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:17.108Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:26:17.109Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:26:17.113Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:26:17.113Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:26:17.113Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:26:20.239Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:26:20.239Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:26:20.239Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:26:20.240Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:26:20.240Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:20.240Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:26:20.240Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:26:20.240Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:26:20.240Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:26:20.241Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:20.241Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:26:20.242Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:26:20.243Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:26:20.246Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:26:20.246Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:26:21.508Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:26:21.508Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:26:21.508Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:26:21.509Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:26:21.509Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:21.509Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:26:21.509Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:26:21.509Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:26:21.509Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:26:21.510Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:21.510Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:26:21.511Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:26:21.513Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:26:21.514Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:26:21.514Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:26:31.167Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:26:31.167Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:26:31.167Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:26:31.167Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:26:31.167Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:31.167Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:26:31.168Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:26:31.168Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:26:31.168Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:26:31.168Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:31.169Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:26:31.171Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:26:31.172Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:26:31.173Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:26:31.174Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:26:33.431Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:26:33.431Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:26:33.431Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:26:33.431Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:26:33.431Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:33.431Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:26:33.432Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:26:33.432Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:26:33.432Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:26:33.432Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:33.433Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:26:33.434Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:26:33.434Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:26:33.436Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:26:33.437Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:26:43.283Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:26:43.283Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:26:43.283Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:26:43.283Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:26:43.284Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:43.284Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:26:43.286Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:26:43.292Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:26:43.292Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:26:43.292Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:43.293Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:26:43.297Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:26:43.298Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:26:43.299Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:26:43.299Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:26:45.747Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:26:45.747Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:26:45.747Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:26:45.747Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:26:45.747Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:45.747Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:26:45.748Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:26:45.749Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:26:45.749Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:26:45.749Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:26:45.749Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:26:45.750Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:26:45.751Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:26:45.753Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:26:45.753Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:27:45.230Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:27:45.230Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:27:45.230Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:27:45.230Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:27:45.230Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:27:45.230Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:27:45.231Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:27:45.231Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:27:45.231Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:27:45.231Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:27:45.232Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:27:45.234Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:27:45.235Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:27:45.238Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:27:45.238Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:27:48.282Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:27:48.283Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:27:48.283Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:27:48.283Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:27:48.283Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:27:48.283Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:27:48.284Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:27:48.284Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:27:48.285Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:27:48.285Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:27:48.285Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:27:48.288Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:27:48.288Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:27:48.290Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:27:48.290Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:28:13.829Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:28:13.829Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:28:13.829Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:28:13.829Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:28:13.829Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:28:13.829Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:28:13.829Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:28:13.830Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:28:13.830Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:28:13.831Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:28:13.831Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:28:13.833Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:28:13.834Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:28:13.841Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:28:13.841Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:28:50.416Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:28:50.416Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:28:50.416Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:28:50.416Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:28:50.416Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:28:50.416Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:28:50.421Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:28:50.422Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:28:50.422Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:28:50.422Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:28:50.425Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:28:50.430Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:28:50.430Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:28:50.434Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:28:50.436Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:28:53.927Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:28:53.928Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:28:53.928Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:28:53.928Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:28:53.928Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:28:53.928Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:28:53.928Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:28:53.929Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:28:53.929Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:28:53.929Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:28:53.929Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:28:53.930Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:28:53.931Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:28:53.932Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:28:53.932Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:29:14.010Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:29:14.010Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:29:14.010Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:29:14.010Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:29:14.010Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:29:14.010Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:29:14.011Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:29:14.011Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:29:14.011Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:29:14.011Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:29:14.012Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:29:14.013Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:29:14.014Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:29:14.015Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:29:14.015Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:29:21.809Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:29:21.810Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:29:21.810Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:29:21.810Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:29:21.810Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:29:21.810Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:29:21.812Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:29:21.812Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:29:21.812Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:29:21.812Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:29:21.813Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:29:21.815Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:29:21.815Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:29:21.824Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:29:21.824Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:29:53.523Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:29:53.523Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:29:53.523Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:29:53.523Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:29:53.523Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:29:53.523Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:29:53.524Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:29:53.525Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:29:53.525Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:29:53.525Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:29:53.526Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:29:53.528Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:29:53.528Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:29:53.529Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:29:53.530Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:30:24.826Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:30:24.826Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:30:24.826Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:30:24.826Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:30:24.826Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:30:24.826Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:30:24.827Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:30:24.827Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:30:24.827Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:30:24.827Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:30:24.828Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:30:24.829Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:30:24.830Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:30:24.832Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:30:24.832Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:30:36.930Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:30:36.930Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:30:36.930Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:30:36.930Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:30:36.930Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:30:36.930Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:30:36.933Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:30:36.933Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:30:36.933Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:30:36.933Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:30:36.934Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:30:36.936Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:30:36.936Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:30:36.938Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:30:36.938Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:31:08.263Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:31:08.263Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:31:08.263Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:31:08.263Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:31:08.263Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:31:08.263Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:31:08.264Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:31:08.264Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:31:08.264Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:31:08.264Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:31:08.265Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:31:08.267Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:31:08.269Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:31:08.270Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:31:08.270Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:31:10.239Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:31:10.239Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:31:10.239Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:31:10.239Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:31:10.240Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:31:10.240Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:31:10.240Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:31:10.240Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:31:10.240Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:31:10.240Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:31:10.241Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:31:10.242Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:31:10.243Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:31:10.245Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:31:10.245Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:31:59.263Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:31:59.263Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:31:59.264Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:31:59.264Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:31:59.264Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:31:59.264Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:31:59.265Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:31:59.265Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:31:59.265Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:31:59.265Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:31:59.265Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:31:59.267Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:31:59.268Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:31:59.275Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:31:59.275Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:32:01.583Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:32:01.584Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:32:01.584Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:32:01.584Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:32:01.584Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:32:01.584Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:32:01.585Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:32:01.585Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:32:01.585Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:32:01.585Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:32:01.586Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:32:01.587Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:32:01.588Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:32:01.588Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:32:01.589Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:32:30.181Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:32:30.181Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:32:30.181Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:32:30.181Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:32:30.181Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:32:30.181Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:32:30.182Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:32:30.183Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:32:30.183Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:32:30.183Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:32:30.184Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:32:30.185Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:32:30.191Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:32:30.194Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:32:30.194Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:32:59.707Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:32:59.708Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:32:59.708Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:32:59.708Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:32:59.708Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:32:59.708Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:32:59.709Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:32:59.709Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:32:59.709Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:32:59.709Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:32:59.710Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:32:59.712Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:32:59.712Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:32:59.715Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:32:59.715Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:33:15.164Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:33:15.164Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:33:15.164Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:33:15.164Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:33:15.164Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:33:15.164Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:33:15.166Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:33:15.166Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:33:15.166Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:33:15.166Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:33:15.167Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:33:15.170Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:33:15.170Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:33:15.173Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:33:15.175Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:33:38.802Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:33:38.802Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:33:38.802Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:33:38.802Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:33:38.802Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:33:38.802Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:33:38.803Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:33:38.803Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:33:38.803Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:33:38.803Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:33:38.804Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:33:38.806Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:33:38.808Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:33:38.808Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:33:38.808Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:33:48.859Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:33:48.859Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:33:48.859Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:33:48.859Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:33:48.859Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:33:48.859Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:33:48.860Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:33:48.861Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:33:48.861Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:33:48.861Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:33:48.861Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:33:48.867Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:33:48.870Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:33:48.874Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:33:48.874Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:33:51.336Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:33:51.336Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:33:51.336Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:33:51.336Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:33:51.336Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:33:51.336Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:33:51.337Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:33:51.337Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:33:51.337Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:33:51.337Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:33:51.338Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:33:51.339Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:33:51.340Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:33:51.342Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:33:51.342Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:34:05.006Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:34:05.006Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:34:05.006Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:34:05.006Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:34:05.006Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:34:05.006Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:34:05.007Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:34:05.008Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:34:05.008Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:34:05.008Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:34:05.008Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:34:05.012Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:34:05.012Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:34:05.021Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:34:05.022Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:34:18.246Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:34:18.246Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:34:18.246Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:34:18.246Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:34:18.246Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:34:18.246Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:34:18.247Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:34:18.247Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:34:18.247Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:34:18.247Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:34:18.248Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:34:18.249Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:34:18.250Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:34:18.251Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:34:18.251Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:34:19.263Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:34:19.263Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:34:19.264Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:34:19.264Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:34:19.264Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:34:19.264Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:34:19.265Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:34:19.266Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:34:19.266Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:34:19.266Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:34:19.266Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:34:19.267Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:34:19.268Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:34:19.272Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:34:19.272Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:34:28.465Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:34:28.465Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:34:28.465Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:34:28.465Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:34:28.465Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:34:28.465Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:34:28.466Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:34:28.466Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:34:28.466Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:34:28.467Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:34:28.467Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:34:28.469Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:34:28.469Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:34:28.478Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:34:28.478Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:34:31.365Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:34:31.366Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:34:31.366Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:34:31.366Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:34:31.366Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:34:31.366Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:34:31.366Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:34:31.367Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:34:31.367Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:34:31.367Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:34:31.367Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:34:31.369Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:34:31.369Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:34:31.371Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:34:31.371Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:34:33.698Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:34:33.699Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:34:33.699Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:34:33.699Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:34:33.699Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:34:33.699Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:34:33.699Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:34:33.699Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:34:33.700Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:34:33.700Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:34:33.700Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:34:33.701Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:34:33.702Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:34:33.703Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:34:33.703Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:35:00.969Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:35:00.970Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:35:00.970Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:35:00.970Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:35:00.970Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:35:00.970Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:35:00.970Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:35:00.971Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:35:00.971Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:35:00.971Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:35:00.972Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:35:00.975Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:35:00.975Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:35:00.985Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:35:00.985Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:35:10.148Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:35:10.148Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:35:10.148Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:35:10.148Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:35:10.148Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:35:10.148Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:35:10.150Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:35:10.150Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:35:10.150Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:35:10.151Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:35:10.151Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:35:10.154Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:35:10.154Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:35:10.158Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:35:10.158Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:36:00.811Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:36:00.811Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:36:00.811Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:36:00.811Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:36:00.811Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:36:00.811Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:36:00.813Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:36:00.814Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:36:00.814Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:36:00.814Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:36:00.814Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:36:00.816Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:36:00.818Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:36:00.819Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:36:00.819Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:36:03.773Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:36:03.773Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:36:03.773Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:36:03.773Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:36:03.773Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:36:03.774Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:36:03.774Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:36:03.774Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:36:03.774Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:36:03.774Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:36:03.775Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:36:03.777Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:36:03.778Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:36:03.780Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:36:03.780Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:36:21.436Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:36:21.436Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:36:21.436Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:36:21.436Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:36:21.436Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:36:21.436Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:36:21.437Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:36:21.437Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:36:21.437Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:36:21.437Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:36:21.438Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:36:21.440Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:36:21.441Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:36:21.443Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:36:21.443Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:36:23.644Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:36:23.644Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:36:23.644Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:36:23.644Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:36:23.644Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:36:23.644Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:36:23.644Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:36:23.645Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:36:23.645Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:36:23.645Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:36:23.646Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:36:23.648Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:36:23.649Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:36:23.650Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:36:23.651Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:36:25.042Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:36:25.042Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:36:25.042Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:36:25.042Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:36:25.042Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:36:25.042Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:36:25.043Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:36:25.043Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:36:25.043Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:36:25.043Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:36:25.044Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:36:25.045Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:36:25.046Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:36:25.047Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:36:25.047Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:36:43.778Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:36:43.779Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:36:43.779Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:36:43.779Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:36:43.779Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:36:43.779Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:36:43.781Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:36:43.782Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:36:43.782Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:36:43.782Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:36:43.782Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:36:43.785Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:36:43.785Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:36:43.788Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:36:43.788Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:36:47.791Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:36:47.791Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:36:47.791Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:36:47.791Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:36:47.791Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:36:47.791Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:36:47.792Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:36:47.792Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:36:47.792Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:36:47.792Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:36:47.793Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:36:47.794Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:36:47.796Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:36:47.800Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:36:47.800Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-03-17T03:37:11.808Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-17T03:37:11.808Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-17T03:37:11.808Z] Accepted request POST /corona-688fb/us-central1/processClusterRequest --> processClusterRequest
+[debug] [2020-03-17T03:37:11.808Z] [worker-pool] submitWork(triggerId=processClusterRequest)
+[debug] [2020-03-17T03:37:11.808Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: Assigning socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:37:11.808Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: BUSY
+[debug] [2020-03-17T03:37:11.809Z] [runtime-status] [69171] Trigger "processClusterRequest" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "processClusterRequest"
+[debug] [2020-03-17T03:37:11.809Z] [runtime-status] [69171] triggerDefinition {"httpsTrigger":{},"name":"processClusterRequest","entryPoint":"processClusterRequest"}
+[debug] [2020-03-17T03:37:11.809Z] [runtime-status] [69171] Running processClusterRequest in mode HTTPS
+[debug] [2020-03-17T03:37:11.809Z] [runtime-status] [69171] Attempting to listen to socketPath: /var/folders/mx/g3x0960x3sn8hb8c4kpf0kch0000gn/T/fire_emu_69171.sock
+[debug] [2020-03-17T03:37:11.810Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-17T03:37:11.812Z] [runtime-status] [69171] Ephemeral server handling POST request
+[debug] [2020-03-17T03:37:11.813Z] [runtime-status] [69171] Ephemeral server survived.
+[info] i  functions: Finished "processClusterRequest" in ~1s
+[debug] [2020-03-17T03:37:11.814Z] [worker-processClusterRequest-023d22ac-a46e-4636-adb6-979ce5c78c41]: IDLE
+[debug] [2020-03-17T03:37:11.814Z] [work-queue] {"queueLength":0,"workRunningCount":0}

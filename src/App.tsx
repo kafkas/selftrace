@@ -1,5 +1,5 @@
 import React from 'react';
-// import { StatusBar } from 'react-native';
+import { StatusBar } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { SplashScreen } from 'expo';
 import { connect } from 'react-redux';
@@ -33,7 +33,7 @@ class App extends React.PureComponent<Props> {
 
   componentDidMount() {
     SplashScreen.preventAutoHide();
-    // StatusBar.setBarStyle('dark-content');
+    StatusBar.setBarStyle('dark-content');
     this.unsubscribeFromAuthStateChange = this.props.subscribeToAuthStateChange();
   }
 

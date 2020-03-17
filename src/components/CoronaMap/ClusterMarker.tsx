@@ -41,7 +41,7 @@ export default function ClusterMarker({ cluster }: Props) {
 
   const perc = Math.min(1, (0.9 * (size - 1)) / size);
   const diameter = BASE_DIAMETER + perc * MAX_DELTA;
-  const backgroundColor = CLUSTER_BASE_COLOR.lighten(-perc * 15);
+  const backgroundColor = CLUSTER_BASE_COLOR.lighten(-perc * 5);
 
   return (
     <Marker

@@ -4,6 +4,7 @@ import Icon from '../../components/Icon';
 import MapScreen from '../../screens/map';
 import AccountStack from './AccountStack';
 import FormStack from './FormStack';
+import { PRIMARY_COLOR, INACTIVE_ICON_COLOR } from '../../styles/colors';
 
 const BTab = createBottomTabNavigator();
 
@@ -17,8 +18,16 @@ export default function BottomTab() {
         name='FormStack'
         component={FormStack}
         options={{
-          tabBarIcon: ({ color }: { color: string }) => (
-            <Icon name='form' size={25} color={color} />
+          tabBarIcon: ({ focused }: { color: string }) => (
+            <Icon
+              name='form'
+              size={25}
+              color={
+                focused
+                  ? PRIMARY_COLOR.toString()
+                  : INACTIVE_ICON_COLOR.toString()
+              }
+            />
           ),
         }}
       />
@@ -26,8 +35,16 @@ export default function BottomTab() {
         name='MapScreen'
         component={MapScreen}
         options={{
-          tabBarIcon: ({ color }: { color: string }) => (
-            <Icon name='map-marker-multiple' size={25} color={color} />
+          tabBarIcon: ({ focused }: { color: string }) => (
+            <Icon
+              name='map-marker-multiple'
+              size={25}
+              color={
+                focused
+                  ? PRIMARY_COLOR.toString()
+                  : INACTIVE_ICON_COLOR.toString()
+              }
+            />
           ),
         }}
       />
@@ -35,8 +52,16 @@ export default function BottomTab() {
         name='AccountStack'
         component={AccountStack}
         options={{
-          tabBarIcon: ({ color }: { color: string }) => (
-            <Icon name='person' size={25} color={color} />
+          tabBarIcon: ({ focused }: { color: string }) => (
+            <Icon
+              name='person'
+              size={25}
+              color={
+                focused
+                  ? PRIMARY_COLOR.toString()
+                  : INACTIVE_ICON_COLOR.toString()
+              }
+            />
           ),
         }}
       />
