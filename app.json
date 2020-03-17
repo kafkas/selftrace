@@ -35,7 +35,8 @@
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "CoronaMap requires access to your location in order to anonymously display it in clusters on the map, depending on your well-being status.",
         "NSLocationAlwaysAndWhenInUseUsageDescription": "CoronaMap requires access to your location in order to anonymously display it in clusters on the map, depending on your well-being status.",
-        "NSLocationAlwaysUsageDescription": "CoronaMap requires access to your location in order to anonymously display it in clusters on the map, depending on your well-being status."
+        "NSLocationAlwaysUsageDescription": "CoronaMap requires access to your location in order to anonymously display it in clusters on the map, depending on your well-being status.",
+        "UIBackgroundModes": ["location", "fetch"]
       },
       "config": {
         "googleMapsApiKey": "AIzaSyBiloV53r_J_B6OGkOFyK0yC1WA8TiAaCM"
