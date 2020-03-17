@@ -39,14 +39,16 @@
       "userTestedPositive": "Kullanıcının test sonucu pozitif",
       "userShowingSymptoms": "Kullanıcı belirti gösteriyor",
       "testedPositive": "Test sonucu pozitif",
-      "showingSymptoms": "Belirti gösteriyor"
+      "showingSymptoms": "Belirti gösteriyor",
+      "chooseWellbeingTitle": "Sağlık durumunuzu güncellemelisiniz",
+      "chooseWellbeingMessage": "Haritayı görmek için bize ilk önce sağlık durumunuzu bildirmelisiniz. Lütfen formda sağlık durumunuzu güncelleyin."
     }
   },
   "form": {
     "topNote": "Lütfen sağlık durumunuzu güncel tutun. Aşağıdaki seçeneklerden herhangi birini seçebilirsiniz.",
     "wellbeing": "Sağlık Durumu",
-    "important": "",
-    "note": "",
+    "important": "Önemli",
+    "note": "Not",
     "options": {
       "well": {
         "label": "Her Şey Yolunda",

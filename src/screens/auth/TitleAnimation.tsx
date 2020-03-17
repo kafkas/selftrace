@@ -5,6 +5,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from 'react-native';
+import i18n from 'i18n-js';
 import Text from '../../components/Text';
 import withActivation from '../../hocs/withActivation';
 import { BLUE_COLOR } from '../../styles/colors';
@@ -82,7 +83,7 @@ export default function TitleAnimation({
             numberOfLines={1}
             ellipsizeMode='clip'
           >
-            Sign Up
+            {i18n.t('headers.signup')}
           </ActivatedText>
         </Animated.View>
       </Animated.View>

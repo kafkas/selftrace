@@ -29,9 +29,13 @@ TaskManager.defineTask(
         coords: { latitude, longitude },
       } = safeLocations[safeLocations.length - 1];
       const { uid } = store.getState().auth.userInfo;
-      await API.requestUpdateUserInfo(uid, {
-        lastLocation: { lat: latitude, lng: longitude },
-      });
+      try {
+        await API.requestUpdateUserInfo(uid, {
+          lastLocation: { lat: latitude, lng: longitude },
+        });
+      } catch (err) {
+        //
+      }
     }
   }
 );

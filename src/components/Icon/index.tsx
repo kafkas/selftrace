@@ -160,6 +160,11 @@ const hashmap = Object.freeze({
     id: 'form',
     defaultSize: 25,
   },
+  lock: {
+    font: Foundation,
+    id: 'lock',
+    defaultSize: 25,
+  },
 });
 
 export type IconName = keyof typeof hashmap;

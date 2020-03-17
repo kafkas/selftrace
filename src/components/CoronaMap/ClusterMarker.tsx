@@ -78,7 +78,7 @@ export default function ClusterMarker({ cluster }: Props) {
                 {i18n.t('screens.map.testedPositive')}: {positiveCount}
               </Text>
               <Text style={styles.calloutDescription}>
-                {i18n.t('screens.map.testedPositive')}: {showingSymptomsCount}
+                {i18n.t('screens.map.showingSymptoms')}: {showingSymptomsCount}
               </Text>
             </>
           )}

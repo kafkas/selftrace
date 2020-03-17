@@ -39,7 +39,9 @@
       "userTestedPositive": "User tested positive",
       "userShowingSymptoms": "User showing symptoms",
       "testedPositive": "Tested positive",
-      "showingSymptoms": "Showing symptoms"
+      "showingSymptoms": "Showing symptoms",
+      "chooseWellbeingTitle": "Must update well-being first",
+      "chooseWellbeingMessage": "To see the map you need to inform us of your well-being. Please update it in the form."
     }
   },
   "form": {
