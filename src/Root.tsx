@@ -1,13 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { registerRootComponent } from 'expo';
-import * as TaskManager from 'expo-task-manager';
-import { LocationData } from 'expo-location';
 import { decode, encode } from 'base-64';
-import * as API from './api';
 import store from './store';
 import App from './App';
 import './config/localization';
+import './config/tasks';
 
 // Define these to prevent firebase error
 if (!global.btoa) {
@@ -17,28 +15,6 @@ if (!global.btoa) {
 if (!global.atob) {
   global.atob = decode;
 }
-
-// Define background tasks
-TaskManager.defineTask(
-  'sendLastLocationToBackend',
-  async ({ data: { locations }, error }) => {
-    if (error) return;
-    const safeLocations = locations as LocationData[];
-    if (safeLocations.length > 0) {
-      const {
-        coords: { latitude, longitude },
-      } = safeLocations[safeLocations.length - 1];
-      const { uid } = store.getState().auth.userInfo;
-      try {
-        await API.requestUpdateUserInfo(uid, {
-          lastLocation: { lat: latitude, lng: longitude },
-        });
-      } catch (err) {
-        //
-      }
-    }
-  }
-);
 
 function Root() {
   return (

@@ -1,30 +1,58 @@
 {
   "expo": {
-    "name": "Corona Map",
+    "name": "CoronaMap",
+    "description": "An app that shows a map of users who self-reportedly have COVID-19 or show some of its symptoms.",
     "slug": "corona",
     "privacy": "public",
     "sdkVersion": "36.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
     "version": "1.0.0",
     "orientation": "portrait",
+    "primaryColor": "#fc0a74",
     "icon": "./assets/icon.png",
+    "entryPoint": "./src/Root.tsx",
+    "androidStatusBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#ffffff"
+    },
+    "androidNavigationBar": {
+      "visible": true,
+      "barStyle": "dark-content",
+      "backgroundColor": "#ffffff"
+    },
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
-    }
+      "bundleIdentifier": "com.ocustel.corona",
+      "requireFullScreen": false,
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "CoronaMap requires access to your location in order to anonymously display it in clusters on the map, depending on your well-being status.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "CoronaMap requires access to your location in order to anonymously display it in clusters on the map, depending on your well-being status.",
+        "NSLocationAlwaysUsageDescription": "CoronaMap requires access to your location in order to anonymously display it in clusters on the map, depending on your well-being status."
+      },
+      "config": {
+        "googleMapsApiKey": "AIzaSyBiloV53r_J_B6OGkOFyK0yC1WA8TiAaCM"
+      }
+    },
+    "android": {
+      "package": "com.ocustel.corona",
+      "versionCode": 1,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyALYObT2W268AwZSiNY0TqupJXpNKrAqlY"
+        }
+      }
+    },
+    "packagerOpts": {
+      "sourceExts": ["js", "json", "ts", "tsx", "jsx"]
+    },
+    "platforms": ["ios", "android"]
   }
 }

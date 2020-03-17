@@ -5,15 +5,12 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from 'react-native';
-import Text from '../../components/Text';
-import logo from '../../../assets/icon.png';
+import logo from '../../../assets/icon-small.png';
 import styles, {
   IMAGE_X_POSITION,
   IMAGE_Y_POSITION,
   IMAGE_SIZE,
 } from './styles';
-import { HEADER_FONT_FAMILY } from '../../styles/typography';
-import { PRIMARY_COLOR } from '../../styles/colors';
 
 interface Props {
   scrollX: Animated.AnimatedValue;
