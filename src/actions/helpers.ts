@@ -1,4 +1,4 @@
-import * as Database from '../database';
+import { AsyncStorage } from 'react-native';
 import { Dispatch } from '.';
 import {
   receiveUpdateUserInfoResponse,
@@ -7,8 +7,12 @@ import {
 
 export async function pullUserInfoFromLocalDBToRedux(dispatch: Dispatch) {
   try {
-    const wellbeing = await Database.abstract.getWellbeing();
-    dispatch(receiveUpdateUserInfoResponse({ wellbeing }));
+    const wellbeing = await AsyncStorage.getItem('wellbeing');
+    dispatch(
+      receiveUpdateUserInfoResponse({
+        wellbeing: wellbeing === null ? undefined : Number(wellbeing),
+      })
+    );
     dispatch(clearUpdateUserInfoProgress());
   } catch (err) {
     //

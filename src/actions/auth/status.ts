@@ -1,7 +1,6 @@
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import * as TaskManager from 'expo-task-manager';
-import * as Database from '../../database';
 import * as API from '../../api';
 import { ActionCreator, AuthStatusAction, Dispatch, ActionType } from '..';
 import { ReduxAuthUserInfo } from '../../reducers/auth/userInfo';
@@ -27,15 +26,12 @@ export const subscribeToAuthStateChange = () => (dispatch: Dispatch) => {
   return API.requestAuthStateListener(async (user: API.UserInfo) => {
     if (!user) {
       // Case 1: Signed out
-
-      Database.clear();
       await TaskManager.unregisterAllTasksAsync();
       return dispatch(setAuthStatusToSignedOut());
     }
 
     // Case 2: Signed in
 
-    Database.initialize();
     const userInfo: ReduxAuthUserInfo = {
       email: user.email,
       uid: user.uid,

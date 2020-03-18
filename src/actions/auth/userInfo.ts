@@ -1,5 +1,5 @@
+import { AsyncStorage } from 'react-native';
 import * as API from '../../api';
-import * as Database from '../../database';
 import store from '../../store';
 import { ReduxAuthUserInfo } from '../../reducers/auth/userInfo';
 import { ActionCreator, NetworkAction, Dispatch, ActionType } from '..';
@@ -75,7 +75,7 @@ export async function downloadUserInfoToLocalDB(uid: string) {
       return undefined;
     }
     const { wellbeing } = userDoc;
-    await Database.abstract.setWellbeing(wellbeing);
+    await AsyncStorage.setItem('wellbeing', wellbeing.toString());
 
     return Promise.resolve();
   } catch (err) {
