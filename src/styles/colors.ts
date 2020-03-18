@@ -9,7 +9,7 @@ export const PRIMARY_COLOR = rgb(252, 10, 116);
 export const SECONDARY_COLOR = rgb(254, 39, 177);
 export const CLUSTER_BASE_COLOR = PRIMARY_COLOR;
 
-export const BLUE_COLOR = SYSTEM_BLUE_LIGHT;
+export const BLUE_COLOR = rgb(26, 141, 249);
 
 export const RED_COLOR = rgb(230, 44, 62);
 export const WHITE_COLOR = rgb(255, 255, 255);
@@ -23,8 +23,3 @@ export const INACTIVE_TEXT_COLOR = rgb(125, 125, 125);
 export const DARK_TEXT_COLOR = rgb(60, 60, 60);
 export const DARK_GRAY_COLOR = rgb(50, 50, 50);
 export const BLACK_TEXT_COLOR = rgb(30, 30, 30);
-
-// export const CLUSTER_BASE_COLOR = rgb(242, 0, 97);
-// export const PRIMARY_COLOR = rgb(224, 52, 89);
-// export const BLUE_COLOR = rgb(13, 130, 255);
-// export const BLUE_COLOR = rgb(26, 141, 249);

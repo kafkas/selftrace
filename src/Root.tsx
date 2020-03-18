@@ -8,7 +8,6 @@ import * as API from './api';
 import store from './store';
 import App from './App';
 import './config/localization';
-import './config/tasks';
 
 // Define these to prevent firebase error
 if (!global.btoa) {

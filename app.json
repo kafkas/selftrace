@@ -5,7 +5,7 @@
     "slug": "corona",
     "privacy": "public",
     "sdkVersion": "36.0.0",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "primaryColor": "#fc0a74",
     "icon": "./assets/icon.png",

@@ -44,7 +44,7 @@ export default function LogoAnimation({
               {
                 scale: keyboardScale.interpolate({
                   inputRange: [0, 1],
-                  outputRange: [1, 0.6],
+                  outputRange: [1, 0.8],
                 }),
               },
               { perspective: 1000 },

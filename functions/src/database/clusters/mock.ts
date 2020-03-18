@@ -17,12 +17,11 @@ function createRandomUsers(count: number): UserDoc[] {
   return users;
 }
 
-const randomlyCreatedUsers = createRandomUsers(1000); // Treat as DB
-
 export async function usersPositiveOrShowingSymptomsInRegionMOCK(
   region: Region
 ) {
   try {
+    const randomlyCreatedUsers = createRandomUsers(100000); // Treat as DB
     const usersInRegion = randomlyCreatedUsers.filter(user => {
       const { lat, lng } = user.lastLocation!;
       return region.contains(lat, lng);
