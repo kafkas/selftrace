@@ -1,8 +1,8 @@
 # CoronaMap
 
- |         Form         |         Map          |       Cluster        |
- | :------------------: | :------------------: | :------------------: |
- | ![](assets/scr1.png) | ![](assets/scr2.png) | ![](assets/scr3.png) |
+ |                 Form                 |                 Map                  |               Cluster                |
+ | :----------------------------------: | :----------------------------------: | :----------------------------------: |
+ | ![](https://i.imgur.com/ToSa9q8.png) | ![](https://i.imgur.com/ADvAbav.png) | ![](https://i.imgur.com/PpXVGYx.png) |
 
 CoronaMap is an open-source effort to create a live map that anonymously shows all users who self-reportedly have coronavirus (COVID-19) or show some of its symptoms. We are aiming to build a tool that
 1. will help people track the spread in real-time and self-distance accordingly
