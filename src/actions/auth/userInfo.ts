@@ -75,7 +75,9 @@ export async function downloadUserInfoToLocalDB(uid: string) {
       return undefined;
     }
     const { wellbeing } = userDoc;
-    await AsyncStorage.setItem('wellbeing', wellbeing.toString());
+    if (wellbeing) {
+      await AsyncStorage.setItem('wellbeing', wellbeing.toString());
+    }
 
     return Promise.resolve();
   } catch (err) {
