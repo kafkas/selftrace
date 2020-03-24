@@ -4,7 +4,9 @@ import config from './config';
 export { User, UserInfo } from 'firebase';
 
 export function initialize() {
-  return firebase.initializeApp(config);
+  if(!firebase.apps.length) {
+    return firebase.initializeApp(config);
+  }
 }
 
 export * from './auth';
