@@ -1,3 +1,4 @@
+import { AsyncStorage } from 'react-native';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import * as TaskManager from 'expo-task-manager';
@@ -26,6 +27,7 @@ export const subscribeToAuthStateChange = () => (dispatch: Dispatch) => {
   return API.requestAuthStateListener(async (user: API.UserInfo) => {
     if (!user) {
       // Case 1: Signed out
+      await AsyncStorage.removeItem('wellbeing');
       await TaskManager.unregisterAllTasksAsync();
       return dispatch(setAuthStatusToSignedOut());
     }
